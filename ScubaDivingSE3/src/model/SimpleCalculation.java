@@ -10,8 +10,8 @@ package model;
  * @author pablo
  */
 public class SimpleCalculation {
-    float oxigen;
+    int oxigen;
     float ppo2;
-    float depth;
+    int depth;
     
 }
