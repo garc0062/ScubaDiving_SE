@@ -100,11 +100,11 @@ public class SimpleCalculationTest {
         SimpleCalculation instance = new SimpleCalculation();
         //Set value and get value in parcentage should be equal
         instance.setOxygen(23);
-        assertEquals(23, instance.getOxigenInPercentage());
+        assertEquals(23, instance.getOxygenInPercentage());
         instance.setOxygen(40);
-        assertEquals(40, instance.getOxigenInPercentage());
+        assertEquals(40, instance.getOxygenInPercentage());
         instance.setOxygen(50);
-        assertEquals(50, instance.getOxigenInPercentage());
+        assertEquals(50, instance.getOxygenInPercentage());
     }
 
     /**
@@ -116,11 +116,11 @@ public class SimpleCalculationTest {
         SimpleCalculation instance = new SimpleCalculation();
         //Get value in decimal should be the decimal of the percentage
         instance.setOxygen(23);
-        assertEquals(0.23F, instance.getOxigenInDecimal(), 2);
+        assertEquals(0.23F, instance.getOxygenInDecimal(), 2);
         instance.setOxygen(40);
-        assertEquals(0.40F, instance.getOxigenInDecimal(), 2);
+        assertEquals(0.40F, instance.getOxygenInDecimal(), 2);
         instance.setOxygen(50);
-        assertEquals(0.50F, instance.getOxigenInDecimal(), 2);
+        assertEquals(0.50F, instance.getOxygenInDecimal(), 2);
     }
 
     /**
@@ -132,9 +132,9 @@ public class SimpleCalculationTest {
         SimpleCalculation instance = new SimpleCalculation();
         //Set value and get value in parcentage should be equal
         instance.setPPO2(1.1F);
-        assertEquals(1.1F, instance.getPpo2(), 1);
+        assertEquals(1.1F, instance.getPPO2(), 1);
         instance.setPPO2(1.3F);
-        assertEquals(1.3F, instance.getPpo2(), 1);
+        assertEquals(1.3F, instance.getPPO2(), 1);
     }
 
     /**

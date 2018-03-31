@@ -23,27 +23,32 @@ public class SimpleCalculation {
     //Min value of depth
     public static final int MIN_DEPTH_VALUE = 0;
 
-    int oxigen;
-    float ppo2;
+    int oxygen = 22;
+    float ppo2 = (float)1.1;
     float depth;
+    
+    public SimpleCalculation() {
+    }
 
      /**
      * Get oxygen in percentage
+     * 
      * @return oxygen in percentage
      */
-    public int getOxigenInPercentage() {
-        return oxigen;
+    public int getOxygenInPercentage() {
+        return oxygen;
     }
 
      /**
      * Get oxygen in decimal
+     * 
      * @return oxygen in decimal
      */
-    public float getOxigenInDecimal() {
-        return (float)oxigen * 0.01F;
+    public float getOxygenInDecimal() {
+        return (float)oxygen * 0.01F;
     }
 
-    public float getPpo2() {
+    public float getPPO2() {
         return ppo2;
     }
 
@@ -53,10 +58,21 @@ public class SimpleCalculation {
     
     /**
      * Converts and returns absolute pressure at depth from depth in meters
+     
      * @return oxygen in decimal
      */
     public float getAbsolutePressure() {
         return (float)depth/10 + 1;
+    }
+    
+    /**
+     * Converts an ata value to meters
+     *
+     * @param ata: depth value as ata to use during conversion.
+     * @return converted depth in meters.
+     */
+    public float getAtaAsMeters(float ata) {
+        return(ata-1)*10;
     }
 
     /**
@@ -66,7 +82,7 @@ public class SimpleCalculation {
      * @return true if value was properly set (within range). False otherwise.
      */
     public boolean setPPO2(float ppo2) {
-        if (ppo2 >= MIN_PPO2_VALUE && ppo2 <= MAX_PPO2_VALUE) {
+        if (validPPO2(ppo2)) {
             this.ppo2 = ppo2;
             return true;
         }
@@ -81,8 +97,8 @@ public class SimpleCalculation {
      * @return true if value was properly set (within range). False otherwise.
      */
     public boolean setOxygen(int oxygen) {
-        if (oxygen >= MIN_OXYGEN_VALUE && oxygen <= MAX_OXYGEN_VALUE) {
-            this.oxigen = oxygen;
+        if (validOxygen(oxygen)) {
+            this.oxygen = oxygen;
             return true;
         }
         return false;
@@ -101,5 +117,57 @@ public class SimpleCalculation {
             return true;
         }
         return false;
+    }
+
+    /**
+     * Checks a given oxygen value to see if it is above the minimum requirement
+     *
+     * @return true if value is within range. False otherwise.
+     */
+    public boolean validOxygen(float oxygen){
+        if (oxygen >= MIN_OXYGEN_VALUE && oxygen <= MAX_OXYGEN_VALUE) {
+            return true;
+        }
+        return false;
+    }
+    
+    /**
+     * Checks a given PPO2 value to see if it is above the minimum requirement
+     * 
+     * @param ppo2: partial pressure of oxygen to check.
+     * @return true if value is within range. False otherwise.
+     */
+    public boolean validPPO2(float ppo2){
+        if (ppo2 >= MIN_PPO2_VALUE && ppo2 <= MAX_PPO2_VALUE) {
+            return true;
+        }
+        return false;
+    }
+    
+    /**
+     * Checks a given depth value to see if it is above the minimum requirement
+     * 
+     * @param depth: depth value in meters to check.
+     * @return true if value is within range. False otherwise.
+     */
+    public boolean validDepth(float depth){
+        if (depth >= MIN_DEPTH_VALUE) {
+            return true;
+        }
+        return false;
+    }
+    
+    /**
+     * Calculates Maximum Operating Depth in meters from current
+     * oxygen value (as a decimal) and current PPO2 value
+     *
+     * @return maximum depth in meters
+     */
+    public float modCalculation() {
+        if (validOxygen(oxygen) && validPPO2(ppo2)) {
+            float maxDepth = ppo2 / this.getOxygenInDecimal();
+            return this.getAtaAsMeters(maxDepth);
+        }
+        else return 0;
     }
 }

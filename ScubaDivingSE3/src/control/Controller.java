@@ -15,7 +15,7 @@ import view.ScubaDivingView;
 public class Controller {
 
     private final ScubaDivingView frame;
-    private SimpleCalculation simpleCalculation;
+    public SimpleCalculation simpleCalculation;
 
     /**
      * Creates a controller to orchestrate the interaction between the view
