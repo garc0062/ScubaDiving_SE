@@ -74,6 +74,11 @@ public class ScubaDivingView extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Simple Calculations"));
 
         bestMixButton.setText("Best Mix");
+        bestMixButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bestMixButtonActionPerformed(evt);
+            }
+        });
 
         eadButton.setText("EAD");
         eadButton.addActionListener(new java.awt.event.ActionListener() {
@@ -83,8 +88,18 @@ public class ScubaDivingView extends javax.swing.JFrame {
         });
 
         smodButton.setText("SMOD");
+        smodButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smodButtonActionPerformed(evt);
+            }
+        });
 
         ppo2Button.setText("PPO2");
+        ppo2Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ppo2ButtonActionPerformed(evt);
+            }
+        });
 
         modButton.setText("MOD");
         modButton.addActionListener(new java.awt.event.ActionListener() {
@@ -251,16 +266,16 @@ public class ScubaDivingView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ppo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppo2ActionPerformed
-        controller.simpleCalculation.setPPO2(Float.valueOf(ppo2.getSelectedItem().toString()));
+        controller.setPPO2(Float.valueOf(ppo2.getSelectedItem().toString()));
     }//GEN-LAST:event_ppo2ActionPerformed
 
     private void sliderDepthStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderDepthStateChanged
-        controller.simpleCalculation.setDepth(sliderDepth.getValue());
+        controller.setDepth(sliderDepth.getValue());
         depth.setText(String.valueOf(sliderDepth.getValue()));
     }//GEN-LAST:event_sliderDepthStateChanged
 
     private void sliderOxygenStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderOxygenStateChanged
-        controller.simpleCalculation.setOxygen(sliderOxygen.getValue());
+        controller.setOxygen(sliderOxygen.getValue());
         Oxygen.setText(String.valueOf(sliderOxygen.getValue()));
     }//GEN-LAST:event_sliderOxygenStateChanged
 
@@ -269,8 +284,20 @@ public class ScubaDivingView extends javax.swing.JFrame {
     }//GEN-LAST:event_eadButtonActionPerformed
 
     private void modButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modButtonActionPerformed
-        simpleResult.setText(String.valueOf(controller.simpleCalculation.modCalculation()));
+        simpleResult.setText(String.valueOf(controller.modCalculation()));
     }//GEN-LAST:event_modButtonActionPerformed
+
+    private void ppo2ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppo2ButtonActionPerformed
+        simpleResult.setText(String.valueOf(controller.ppo2Calculation()));
+    }//GEN-LAST:event_ppo2ButtonActionPerformed
+
+    private void bestMixButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bestMixButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bestMixButtonActionPerformed
+
+    private void smodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smodButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_smodButtonActionPerformed
 
     /**
      * @param args the command line arguments

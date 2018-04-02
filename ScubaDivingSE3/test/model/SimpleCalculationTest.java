@@ -127,8 +127,8 @@ public class SimpleCalculationTest {
      * Test of getPpo2 method, of class SimpleCalculation.
      */
     @Test
-    public void testGetPpo2() {
-        System.out.println("getPpo2");
+    public void testGetPPO2() {
+        System.out.println("getPPO2");
         SimpleCalculation instance = new SimpleCalculation();
         //Set value and get value in parcentage should be equal
         instance.setPPO2(1.1F);
@@ -152,19 +152,15 @@ public class SimpleCalculationTest {
     }
 
     /**
-     * Test of getAbsolutePressure method, of class SimpleCalculation.
+     * Test of modCalculation method, of class SimpleCalculation.
      */
     @Test
-    public void testGetAbsolutePressure() {
-        System.out.println("getAbsolutePressure");
+    public void testmodCalculation() {
+        System.out.println("modCalculation");
         SimpleCalculation instance = new SimpleCalculation();
         //Get value should be equal to applying formula
-        instance.setDepth(28.8F);
-        assertEquals(3.88F, instance.getAbsolutePressure(), 2);
-        instance.setDepth(30);
-        assertEquals(4F, instance.getAbsolutePressure(), 2);
-        instance.setDepth(24);
-        assertEquals(3.44F, instance.getAbsolutePressure(), 2);
+        instance.setOxygen(36);
+        instance.setPPO2(1.4F);
+        assertEquals(28.8F, instance.modCalculation(), 2);
     }
-
 }

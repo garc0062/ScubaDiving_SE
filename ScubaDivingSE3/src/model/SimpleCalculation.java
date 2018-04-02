@@ -78,7 +78,7 @@ public class SimpleCalculation {
     /**
      * Set value of PPO2 between valid values range (1.1 and 1.6)
      *
-     * @param ppo2: partial pressure of oxygen to set.
+     * @param ppo2: Partial Pressure of the gas expressed in ata
      * @return true if value was properly set (within range). False otherwise.
      */
     public boolean setPPO2(float ppo2) {
@@ -108,7 +108,7 @@ public class SimpleCalculation {
      * Set value of Oxygen between valid values range (MIN_OXYGEN_VALUE and
      * MAX_OXYGEN_VALUE)
      *
-     * @param depth: partial pressure of oxygen to set.
+     * @param depth: absolute pressure at depth measured in meters
      * @return true if value was properly set (within range). False otherwise.
      */
     public boolean setDepth(float depth) {
@@ -164,10 +164,19 @@ public class SimpleCalculation {
      * @return maximum depth in meters
      */
     public float modCalculation() {
-        if (validOxygen(oxygen) && validPPO2(ppo2)) {
-            float maxDepth = ppo2 / this.getOxygenInDecimal();
-            return this.getAtaAsMeters(maxDepth);
-        }
-        else return 0;
+        float maxDepth = ppo2 / this.getOxygenInDecimal();
+        return this.getAtaAsMeters(maxDepth);
+    }
+    
+    /**
+     * Calculates Maximum Operating Depth in meters from current
+     * oxygen value (as a decimal) and current PPO2 value
+     *
+     * @return maximum depth in meters
+     */
+    public float ppo2Calculation() {
+        float newPPO2 = this.getOxygenInDecimal() * this.getAbsolutePressure();
+        System.out.println(newPPO2);
+        return newPPO2;
     }
 }
