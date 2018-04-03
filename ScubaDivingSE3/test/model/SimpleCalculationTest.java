@@ -158,9 +158,81 @@ public class SimpleCalculationTest {
     public void testmodCalculation() {
         System.out.println("modCalculation");
         SimpleCalculation instance = new SimpleCalculation();
-        //Get value should be equal to applying formula
         instance.setOxygen(36);
         instance.setPPO2(1.4F);
-        assertEquals(28.8F, instance.modCalculation(), 2);
+        assertEquals(28.88F, instance.modCalculation(), 0.01);
+        instance.setOxygen(41);
+        instance.setPPO2(1.2F);
+        assertEquals(19.26F, instance.modCalculation(), 0.01);
+        instance.setOxygen(47);
+        instance.setPPO2(1.5F);
+        assertEquals(21.91F, instance.modCalculation(), 0.01);
+    }
+    
+    /**
+     * Test of ppo2Calculation method, of class SimpleCalculation.
+     */
+    @Test
+    public void testPPO2Calculation() {
+        System.out.println("PPO2Calculation");
+        SimpleCalculation instance = new SimpleCalculation();
+        instance.setOxygen(32);
+        instance.setDepth(30F);
+        assertEquals(1.28F, instance.ppo2Calculation(), 0.01);
+        instance.setOxygen(40);
+        instance.setDepth(40F);
+        assertEquals(2F, instance.ppo2Calculation(), 0.01);
+        instance.setOxygen(28);
+        instance.setDepth(50F);
+        assertEquals(1.68F, instance.ppo2Calculation(), 0.01);
+    }
+    
+    /**
+     * Test of getAtaAsMeters method, of class SimpleCalculation.
+     */
+    @Test
+    public void testGetAtaAsMeters() {
+        System.out.println("getAtaAsMeters");
+        SimpleCalculation instance = new SimpleCalculation();
+        assertEquals(28.8F, instance.getAtaAsMeters(3.88F), 0.01);
+        assertEquals(30F, instance.getAtaAsMeters(4F), 0.01);
+        assertEquals(41F, instance.getAtaAsMeters(5.1F), 0.01);
+    }
+    
+    /**
+     * Test of validPPO2 method, of class SimpleCalculation.
+     */
+    @Test
+    public void testValidPPO2() {
+        System.out.println("validPPO2");
+        SimpleCalculation instance = new SimpleCalculation();
+        assertTrue(instance.validPPO2(1.4F));
+        assertFalse(instance.validPPO2(0.4F));
+        assertFalse(instance.validPPO2(3.6F));
+    }
+    
+    /**
+     * Test of validPPO2 method, of class SimpleCalculation.
+     */
+    @Test
+    public void testValidDepth() {
+        System.out.println("validDepth");
+        SimpleCalculation instance = new SimpleCalculation();
+        assertTrue(instance.validDepth(30F));
+        assertTrue(instance.validDepth(0F));
+        assertFalse(instance.validDepth(-30F));
+    }
+    
+    /**
+     * Test of validPPO2 method, of class SimpleCalculation.
+     */
+    @Test
+    public void testValidOxygen() {
+        System.out.println("validOxygen");
+        SimpleCalculation instance = new SimpleCalculation();
+        assertTrue(instance.validOxygen(27));
+        assertFalse(instance.validOxygen(12));
+        assertFalse(instance.validOxygen(90));
+        assertFalse(instance.validOxygen(-27));
     }
 }
