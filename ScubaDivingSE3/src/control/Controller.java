@@ -79,4 +79,20 @@ public class Controller {
     public float ppo2Calculation() {
         return simpleCalculation.ppo2Calculation();
     }
+    
+    /**
+     * Requests the result of the best Mix calculation from simpleCalculation
+     * @return Fraction of Oxygen in a decimal
+     */
+    public float  bestMixCalculation(){
+        return simpleCalculation.bestMixCalculation();
+    }
+    
+    /**
+     * Requests the result of the EAD calculation from simpleCalculation
+     * @return Equivalent Air Depth (EAD) Value in meter
+     */
+    public float eadCalculation(){
+        return simpleCalculation.eadCalculation();
+    }
 }

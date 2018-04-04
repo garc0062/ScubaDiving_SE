@@ -280,7 +280,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
     }//GEN-LAST:event_sliderOxygenStateChanged
 
     private void eadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eadButtonActionPerformed
-        // TODO add your handling code here:
+        simpleResult.setText(String.valueOf(controller.eadCalculation()));
     }//GEN-LAST:event_eadButtonActionPerformed
 
     private void modButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modButtonActionPerformed
@@ -292,7 +292,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
     }//GEN-LAST:event_ppo2ButtonActionPerformed
 
     private void bestMixButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bestMixButtonActionPerformed
-        // TODO add your handling code here:
+       simpleResult.setText(String.valueOf(controller.bestMixCalculation()));
     }//GEN-LAST:event_bestMixButtonActionPerformed
 
     private void smodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smodButtonActionPerformed
