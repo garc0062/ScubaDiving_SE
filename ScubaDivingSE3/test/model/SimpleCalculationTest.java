@@ -5,10 +5,12 @@
  */
 package model;
 
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 /**
  *
@@ -25,6 +27,14 @@ public class SimpleCalculationTest {
 
     @AfterClass
     public static void tearDownClass() {
+    }
+
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @After
+    public void tearDown() throws Exception {
     }
 
     /**
@@ -187,6 +197,42 @@ public class SimpleCalculationTest {
         assertEquals(1.68F, instance.ppo2Calculation(), 0.01);
     }
     
+    
+    /**
+     * Test of bestMixCalculation method, of class SimpleCalculation.
+     */
+    @Test
+    public void testBestMixCalculation() {
+        System.out.println("BestMixCalculation");
+        SimpleCalculation instance = new SimpleCalculation();
+        instance.setDepth(30);
+        instance.setPPO2(1.4F);
+        assertEquals(0.046F, instance.bestMixCalculation(), 0.01);
+        instance.setDepth(40);
+        instance.setPPO2(1.2F);
+        assertEquals(0.03F, instance.bestMixCalculation(), 0.01);
+        instance.setDepth(50);
+        instance.setPPO2(1.3F);
+        assertEquals(0.025F, instance.bestMixCalculation(), 0.01);  
+    }
+
+    /**
+     * Test of eadCalculation method, of class SimpleCalculation.
+     */
+    @Test
+    public void testEadCalculation() {
+        System.out.println("eadCalculation");
+        SimpleCalculation instance = new SimpleCalculation();
+        instance.setDepth(4);
+        instance.setOxygen(25);
+        assertEquals(27.97F, instance.eadCalculation(), 0.01);
+       instance.setDepth(8);
+        instance.setOxygen(35);
+        assertEquals(55.82F, instance.eadCalculation(), 0.01);
+        instance.setDepth(10);
+        instance.setOxygen(45);
+        assertEquals(59.62F, instance.eadCalculation(), 0.01); 
+    }
     /**
      * Test of getAtaAsMeters method, of class SimpleCalculation.
      */
@@ -235,4 +281,6 @@ public class SimpleCalculationTest {
         assertFalse(instance.validOxygen(90));
         assertFalse(instance.validOxygen(-27));
     }
+
+    
 }

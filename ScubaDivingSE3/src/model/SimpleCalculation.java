@@ -112,7 +112,7 @@ public class SimpleCalculation {
      * @return true if value was properly set (within range). False otherwise.
      */
     public boolean setDepth(float depth) {
-        if (depth >= 0) {
+        if (validDepth(depth)) {
             this.depth = depth;
             return true;
         }
@@ -178,5 +178,35 @@ public class SimpleCalculation {
         float newPPO2 = this.getOxygenInDecimal() * this.getAbsolutePressure();
         System.out.println(newPPO2);
         return newPPO2;
+    }
+    
+     /**
+     * Calculates Best Mix in in decimal from current PPO2 value and 
+     * current depth value as meters
+     * 
+     * @return the Fraction of Oxygen in a decimal
+     */
+    
+    public float bestMixCalculation(){
+    
+        float bestMixResult= ppo2/depth;
+        
+        return bestMixResult;
+   
+    }
+    
+    /**
+     * Calculate  Equivalent Air Depth (EAD) from current
+     * oxygen value (as a decimal) and current depth value as meter 
+     * 
+     * @return Equivalent Air Depth (EAD) Value in meter
+     */
+    
+    public float eadCalculation(){
+        
+            float eadResult= (float) (((1-this.getOxygenInDecimal())*(depth))/0.79);
+            float eadAsmeter= this.getAtaAsMeters(eadResult);
+            return eadAsmeter;
+       
     }
 }
