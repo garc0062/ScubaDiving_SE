@@ -35,11 +35,11 @@ public class ScubaDivingView extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         simpleResult = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        bestMixButton = new javax.swing.JButton();
+        eadButton = new javax.swing.JButton();
+        smodButton = new javax.swing.JButton();
+        ppo2Button = new javax.swing.JButton();
+        modButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         label3 = new java.awt.Label();
         ppo2 = new javax.swing.JComboBox();
@@ -73,20 +73,40 @@ public class ScubaDivingView extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Simple Calculations"));
 
-        jButton1.setText("Best Mix");
-
-        jButton2.setText("EAD");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        bestMixButton.setText("Best Mix");
+        bestMixButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                bestMixButtonActionPerformed(evt);
             }
         });
 
-        jButton3.setText("SMOD");
+        eadButton.setText("EAD");
+        eadButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eadButtonActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("PPO2");
+        smodButton.setText("SMOD");
+        smodButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smodButtonActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("MOD");
+        ppo2Button.setText("PPO2");
+        ppo2Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ppo2ButtonActionPerformed(evt);
+            }
+        });
+
+        modButton.setText("MOD");
+        modButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -94,15 +114,15 @@ public class ScubaDivingView extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(jButton2)
+                .addComponent(eadButton)
                 .addGap(18, 18, 18)
-                .addComponent(jButton5)
+                .addComponent(modButton)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(bestMixButton)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(ppo2Button)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(smodButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -110,11 +130,11 @@ public class ScubaDivingView extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton2))
+                    .addComponent(bestMixButton)
+                    .addComponent(smodButton)
+                    .addComponent(ppo2Button)
+                    .addComponent(modButton)
+                    .addComponent(eadButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -246,19 +266,38 @@ public class ScubaDivingView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ppo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppo2ActionPerformed
-        //controller.sortListRecords();
+        controller.setPPO2(Float.valueOf(ppo2.getSelectedItem().toString()));
     }//GEN-LAST:event_ppo2ActionPerformed
 
     private void sliderDepthStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderDepthStateChanged
+        controller.setDepth(sliderDepth.getValue());
         depth.setText(String.valueOf(sliderDepth.getValue()));
     }//GEN-LAST:event_sliderDepthStateChanged
 
     private void sliderOxygenStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderOxygenStateChanged
-        Oxygen.setText(String.valueOf(sliderOxygen.getValue()));    }//GEN-LAST:event_sliderOxygenStateChanged
+        controller.setOxygen(sliderOxygen.getValue());
+        Oxygen.setText(String.valueOf(sliderOxygen.getValue()));
+    }//GEN-LAST:event_sliderOxygenStateChanged
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void eadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eadButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_eadButtonActionPerformed
+
+    private void modButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modButtonActionPerformed
+        simpleResult.setText(String.valueOf(controller.modCalculation()));
+    }//GEN-LAST:event_modButtonActionPerformed
+
+    private void ppo2ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppo2ButtonActionPerformed
+        simpleResult.setText(String.valueOf(controller.ppo2Calculation()));
+    }//GEN-LAST:event_ppo2ButtonActionPerformed
+
+    private void bestMixButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bestMixButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bestMixButtonActionPerformed
+
+    private void smodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smodButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_smodButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -299,21 +338,21 @@ public class ScubaDivingView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.TextField Oxygen;
+    private javax.swing.JButton bestMixButton;
     private java.awt.TextField depth;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton eadButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private java.awt.Label label1;
     private java.awt.Label label2;
     private java.awt.Label label3;
+    private javax.swing.JButton modButton;
     private javax.swing.JComboBox ppo2;
+    private javax.swing.JButton ppo2Button;
     private javax.swing.JLabel simpleResult;
     private javax.swing.JSlider sliderDepth;
     private javax.swing.JSlider sliderOxygen;
+    private javax.swing.JButton smodButton;
     // End of variables declaration//GEN-END:variables
 }
