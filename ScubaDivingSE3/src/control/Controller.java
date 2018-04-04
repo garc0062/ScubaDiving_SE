@@ -15,7 +15,7 @@ import view.ScubaDivingView;
 public class Controller {
 
     private final ScubaDivingView frame;
-    private SimpleCalculation simpleCalculation;
+    private final SimpleCalculation simpleCalculation;
 
     /**
      * Creates a controller to orchestrate the interaction between the view
@@ -33,5 +33,50 @@ public class Controller {
         frame.pack();
         frame.setVisible(true);
     }
+    
+        /**
+     * Performs the setPPO2 method in simpleCalculation
+     *
+     * @param ppo2: Partial Pressure of the gas expressed in ata
+     * @return true if value was properly set (within range). False otherwise.
+     */
+    public boolean setPPO2(float ppo2) {
+        return simpleCalculation.setPPO2(ppo2);
+    }
 
+    /**
+     * Performs the setOxygen method in simpleCalculation
+     *
+     * @param oxygen: percentage of oxygen in mixture to set.
+     * @return true if value was properly set (within range). False otherwise.
+     */
+    public boolean setOxygen(int oxygen) {
+        return simpleCalculation.setOxygen(oxygen);
+    }
+
+    /**
+     * Performs the setDepth method in simpleCalculation
+     *
+     * @param depth: absolute pressure at depth measured in meters
+     * @return true if value was properly set (within range). False otherwise.
+     */
+    public boolean setDepth(float depth) {
+        return simpleCalculation.setDepth(depth);
+    }
+    
+    /**
+     * Requests the result of the MOD calculation from simpleCalculation
+     * @return maximum depth in meters
+     */
+    public float modCalculation() {
+        return simpleCalculation.modCalculation();
+    }
+    
+    /**
+     * Requests the result of the MOD calculation from simpleCalculation
+     * @return maximum depth in meters
+     */
+    public float ppo2Calculation() {
+        return simpleCalculation.ppo2Calculation();
+    }
 }
