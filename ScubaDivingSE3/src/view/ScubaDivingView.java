@@ -330,6 +330,15 @@ public class ScubaDivingView extends javax.swing.JFrame {
         simpleResult.setText(result);
         setViewValues();
     }//GEN-LAST:event_smodButtonActionPerformed
+    
+    /*
+    *Set values in view according to calculation     
+    */
+    public void setViewValues(){
+        sliderDepth.setValue(Math.round(controller.getDepth()));
+        sliderOxygen.setValue(controller.getOxygenInPercentage());
+        ppo2.getModel().setSelectedItem(controller.getPPO2());
+    }
 
     /**
      * @param args the command line arguments

@@ -53,6 +53,22 @@ public class Controller {
     public boolean setOxygen(int oxygen) {
         return simpleCalculation.setOxygen(oxygen);
     }
+    
+    /**
+     * @return Depth in meters
+     */
+    public float getDepth() {
+        return simpleCalculation.getDepth();
+    }
+    
+    /**
+     * @return Oxygen value as a Percentage
+     */
+    public int getOxygenInPercentage() {
+        return simpleCalculation.getOxygenInPercentage();
+    }
+
+
 
     /**
      * Performs the setDepth method in simpleCalculation
