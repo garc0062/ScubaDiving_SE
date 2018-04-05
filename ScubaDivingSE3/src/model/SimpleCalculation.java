@@ -17,6 +17,7 @@ public class SimpleCalculation {
     //Range for PPO2 values
     public static final float MIN_PPO2_VALUE = 1.1F;
     public static final float MAX_PPO2_VALUE = 1.6F;
+    public static final float STANDARD_PPO2_VALUE = 1.4F;
     //Range for Oxygen values
     public static final int MIN_OXYGEN_VALUE = 22;
     public static final int MAX_OXYGEN_VALUE = 50;
@@ -121,14 +122,11 @@ public class SimpleCalculation {
 
     /**
      * Checks a given oxygen value to see if it is above the minimum requirement
-     *
+     * @param oxygen: Oxygen value
      * @return true if value is within range. False otherwise.
      */
     public boolean validOxygen(float oxygen){
-        if (oxygen >= MIN_OXYGEN_VALUE && oxygen <= MAX_OXYGEN_VALUE) {
-            return true;
-        }
-        return false;
+        return (oxygen >= MIN_OXYGEN_VALUE && oxygen <= MAX_OXYGEN_VALUE);
     }
     
     /**
@@ -165,7 +163,8 @@ public class SimpleCalculation {
      */
     public float modCalculation() {
         float maxDepth = ppo2 / this.getOxygenInDecimal();
-        return this.getAtaAsMeters(maxDepth);
+        setDepth(getAtaAsMeters(maxDepth));
+        return this.depth;
     }
     
     /**
@@ -178,5 +177,16 @@ public class SimpleCalculation {
         float newPPO2 = this.getOxygenInDecimal() * this.getAbsolutePressure();
         System.out.println(newPPO2);
         return newPPO2;
+    }
+    
+    /**
+     * Calculates Standard Maximum Operating Depth in meters from current
+     * oxygen value (as a decimal) and PPO2 value of 1.4
+     *
+     * @return maximum depth in meters
+     */
+    public float smodCalculation() {
+        setPPO2(STANDARD_PPO2_VALUE);
+        return modCalculation();
     }
 }
