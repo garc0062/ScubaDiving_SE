@@ -116,11 +116,11 @@ public class SimpleCalculationTest {
         SimpleCalculation instance = new SimpleCalculation();
         //Get value in decimal should be the decimal of the percentage
         instance.setOxygen(23);
-        assertEquals(0.23F, instance.getOxygenInDecimal(), 2);
+        assertEquals(0.23F, instance.getOxygenInDecimal(), 0.1);
         instance.setOxygen(40);
-        assertEquals(0.40F, instance.getOxygenInDecimal(), 2);
+        assertEquals(0.40F, instance.getOxygenInDecimal(), 0.1);
         instance.setOxygen(50);
-        assertEquals(0.50F, instance.getOxygenInDecimal(), 2);
+        assertEquals(0.50F, instance.getOxygenInDecimal(), 0.1);
     }
 
     /**
@@ -132,9 +132,9 @@ public class SimpleCalculationTest {
         SimpleCalculation instance = new SimpleCalculation();
         //Set value and get value in parcentage should be equal
         instance.setPPO2(1.1F);
-        assertEquals(1.1F, instance.getPPO2(), 1);
+        assertEquals(1.1F, instance.getPPO2(), 0.1);
         instance.setPPO2(1.3F);
-        assertEquals(1.3F, instance.getPPO2(), 1);
+        assertEquals(1.3F, instance.getPPO2(), 0.1);
     }
 
     /**
@@ -146,9 +146,9 @@ public class SimpleCalculationTest {
         SimpleCalculation instance = new SimpleCalculation();
         //Set value and get value in parcentage should be equal
         instance.setDepth(10);
-        assertEquals(10, instance.getDepth(), 2);
+        assertEquals(10, instance.getDepth(), 0.1);
         instance.setDepth(30);
-        assertEquals(30, instance.getDepth(), 2);
+        assertEquals(30, instance.getDepth(), 0.1);
     }
 
     /**
@@ -244,12 +244,12 @@ public class SimpleCalculationTest {
         System.out.println("validOxygen");
         SimpleCalculation instance = new SimpleCalculation();
         instance.setOxygen(24);
-        assertEquals(48.3F, instance.smodCalculation(), 2);
+        assertEquals(48.30F, instance.smodCalculation(), 0.1);
         instance.setOxygen(30);
-        assertEquals(36.7F, instance.smodCalculation(), 2);
+        assertEquals(36.7F, instance.smodCalculation(), 0.1);
         instance.setOxygen(36);
-        assertEquals(29.9F, instance.smodCalculation(), 2);
+        assertEquals(28.9F, instance.smodCalculation(), 0.1);
         instance.setOxygen(50);
-        assertEquals(18.8F, instance.smodCalculation(), 2);
+        assertEquals(18.0F, instance.smodCalculation(), 0.1);
     }
 }
