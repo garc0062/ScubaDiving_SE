@@ -175,7 +175,6 @@ public class SimpleCalculation {
      */
     public float ppo2Calculation() {
         float newPPO2 = this.getOxygenInDecimal() * this.getAbsolutePressure();
-        System.out.println(newPPO2);
         return newPPO2;
     }
     

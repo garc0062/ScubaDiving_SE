@@ -233,7 +233,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
                         .addComponent(Oxygen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
                         .addComponent(depth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -257,9 +257,9 @@ public class ScubaDivingView extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(93, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         pack();
@@ -284,11 +284,37 @@ public class ScubaDivingView extends javax.swing.JFrame {
     }//GEN-LAST:event_eadButtonActionPerformed
 
     private void modButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modButtonActionPerformed
-        simpleResult.setText(String.valueOf(controller.modCalculation()));
+        String resultMOD = (String.valueOf(controller.modCalculation()));
+        String result = "<html>The Maximum Operating Depth value for an  <br>" +
+                "oxygen value of " + controller.getOxygenInPercentage() + "<br>" +
+                "and a PPO2 of " + controller.getPPO2() + " is: <br><br>" + 
+                "<strong>" + resultMOD;
+        if (controller.modCalculationInRange()) {
+            setViewValues();
+        }
+        else {
+            result += "<br><br>WARNING: This value exceeds the depth range of 0-100 metres";
+        }
+        result += "</strong></html>";
+        simpleResult.setText(result);
     }//GEN-LAST:event_modButtonActionPerformed
 
     private void ppo2ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppo2ButtonActionPerformed
-        simpleResult.setText(String.valueOf(controller.ppo2Calculation()));
+        String resultPPO2 = String.valueOf(controller.ppo2Calculation());
+        String result = "<html>The PPO2 value for an  <br>" +
+                "oxygen value of " + controller.getOxygenInPercentage() + "<br>" +
+                "and a depth of " + controller.getDepth() + " metres is: <br><br>" + 
+                "<strong>" + resultPPO2;
+        if (controller.ppo2CalculationInRange()) {
+            controller.setPPO2(controller.ppo2Calculation());
+            controller.roundPPO2();
+            setViewValues();
+        }
+        else {
+            result += "<br><br>WARNING: This value exceeds the recommended PPO2 range of 1.1-1.6 ata";
+        }
+        result += "</strong></html>";
+        simpleResult.setText(result);
     }//GEN-LAST:event_ppo2ButtonActionPerformed
 
     private void bestMixButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bestMixButtonActionPerformed
@@ -296,7 +322,13 @@ public class ScubaDivingView extends javax.swing.JFrame {
     }//GEN-LAST:event_bestMixButtonActionPerformed
 
     private void smodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smodButtonActionPerformed
-        // TODO add your handling code here:
+        String resultSMOD = String.valueOf(controller.smodCalculation());
+        String result = "<html>The SMOD value for an  <br>" +
+                "oxygen value of " + controller.getOxygenInPercentage() + "<br>" +
+                "and a PPO2 of " + controller.getPPO2() + " is: <br><br>" + 
+                "<strong>" + resultSMOD + "</strong></html>";
+        simpleResult.setText(result);
+        setViewValues();
     }//GEN-LAST:event_smodButtonActionPerformed
 
     /**
