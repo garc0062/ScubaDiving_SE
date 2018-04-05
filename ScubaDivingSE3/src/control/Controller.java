@@ -79,4 +79,33 @@ public class Controller {
     public float ppo2Calculation() {
         return simpleCalculation.ppo2Calculation();
     }
+    
+    /**
+     * @return Oxygen value as a Percentage
+     */
+    public int getOxygenInPercentage() {
+        return simpleCalculation.getOxygenInPercentage();
+    }
+    
+    /**
+     * @return Oxygen value as a Percentage
+     */
+    public float getPPO2() {
+        return simpleCalculation.getPPO2();
+    }
+    
+        /**
+     * @return Depth in meters
+     */
+    public float getDepth() {
+        return simpleCalculation.getDepth();
+    }
+    
+     /**
+     * @return standard maximum depth in meters from model to view
+     */
+    public float smodCalculation() {
+        return simpleCalculation.smodCalculation();
+    }
+    
 }

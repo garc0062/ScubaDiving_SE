@@ -6,6 +6,7 @@
 package view;
 
 import control.Controller;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -45,7 +46,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
         ppo2 = new javax.swing.JComboBox();
         label1 = new java.awt.Label();
         sliderOxygen = new javax.swing.JSlider();
-        Oxygen = new java.awt.TextField();
+        oxygen = new java.awt.TextField();
         label2 = new java.awt.Label();
         sliderDepth = new javax.swing.JSlider();
         depth = new java.awt.TextField();
@@ -167,8 +168,8 @@ public class ScubaDivingView extends javax.swing.JFrame {
             }
         });
 
-        Oxygen.setEditable(false);
-        Oxygen.setText("22");
+        oxygen.setEditable(false);
+        oxygen.setText("22");
 
         label2.setText("Depth:");
 
@@ -205,7 +206,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
                     .addComponent(sliderDepth, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Oxygen, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(oxygen, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(depth, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
@@ -230,7 +231,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
                                 .addComponent(sliderDepth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addComponent(Oxygen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(oxygen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
                         .addComponent(depth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -276,7 +277,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
 
     private void sliderOxygenStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderOxygenStateChanged
         controller.setOxygen(sliderOxygen.getValue());
-        Oxygen.setText(String.valueOf(sliderOxygen.getValue()));
+        oxygen.setText(String.valueOf(sliderOxygen.getValue()));
     }//GEN-LAST:event_sliderOxygenStateChanged
 
     private void eadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eadButtonActionPerformed
@@ -296,8 +297,23 @@ public class ScubaDivingView extends javax.swing.JFrame {
     }//GEN-LAST:event_bestMixButtonActionPerformed
 
     private void smodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smodButtonActionPerformed
-        // TODO add your handling code here:
+        String resultSMOD = String.valueOf(controller.smodCalculation());
+        setViewValues();
+        String result = "<html>The SMOD value for an  <br>" +
+                "Oxygen value of " + controller.getOxygenInPercentage() + "<br>" +
+                "and a PPO2 of " + controller.getPPO2() + " is: <br><br>" + 
+                "<strong>" + resultSMOD + "</strong></html>";
+        simpleResult.setText(result);
     }//GEN-LAST:event_smodButtonActionPerformed
+
+    /*
+    *Set values in view according to calculation     
+    */
+    public void setViewValues(){
+        sliderDepth.setValue(Math.round(controller.getDepth()));
+        sliderOxygen.setValue(controller.getOxygenInPercentage());
+        ppo2.getModel().setSelectedItem(controller.getPPO2());
+    }
 
     /**
      * @param args the command line arguments
@@ -337,7 +353,6 @@ public class ScubaDivingView extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.TextField Oxygen;
     private javax.swing.JButton bestMixButton;
     private java.awt.TextField depth;
     private javax.swing.JButton eadButton;
@@ -348,6 +363,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
     private java.awt.Label label2;
     private java.awt.Label label3;
     private javax.swing.JButton modButton;
+    private java.awt.TextField oxygen;
     private javax.swing.JComboBox ppo2;
     private javax.swing.JButton ppo2Button;
     private javax.swing.JLabel simpleResult;
