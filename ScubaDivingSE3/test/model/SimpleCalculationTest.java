@@ -235,4 +235,21 @@ public class SimpleCalculationTest {
         assertFalse(instance.validOxygen(90));
         assertFalse(instance.validOxygen(-27));
     }
+    
+    /**
+     * Test of SMOD method, of class SimpleCalculation.
+     */
+    @Test
+    public void testSmodCalculation() {
+        System.out.println("validOxygen");
+        SimpleCalculation instance = new SimpleCalculation();
+        instance.setOxygen(24);
+        assertEquals(48.3F, instance.smodCalculation(), 2);
+        instance.setOxygen(30);
+        assertEquals(36.7F, instance.smodCalculation(), 2);
+        instance.setOxygen(36);
+        assertEquals(29.9F, instance.smodCalculation(), 2);
+        instance.setOxygen(50);
+        assertEquals(18.8F, instance.smodCalculation(), 2);
+    }
 }
