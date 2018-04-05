@@ -96,9 +96,12 @@ public class Controller {
     
     /**
      * @return Oxygen value as a Percentage
+       /**
+     * Requests the result of the best Mix calculation from simpleCalculation
+     * @return Fraction of Oxygen in a decimal
      */
-    public int getOxygenInPercentage() {
-        return simpleCalculation.getOxygenInPercentage();
+    public float  bestMixCalculation(){
+        return simpleCalculation.bestMixCalculation();
     }
     
     /**
@@ -109,10 +112,11 @@ public class Controller {
     }
     
     /**
-     * @return Depth in meters
+     * Requests the result of the EAD calculation from simpleCalculation
+     * @return Equivalent Air Depth (EAD) Value in meter
      */
-    public float getDepth() {
-        return simpleCalculation.getDepth();
+    public float eadCalculation(){
+        return simpleCalculation.eadCalculation();
     }
     
     /**
@@ -130,5 +134,4 @@ public class Controller {
     public float smodCalculation() {
         return simpleCalculation.smodCalculation();
     }
-    
 }
