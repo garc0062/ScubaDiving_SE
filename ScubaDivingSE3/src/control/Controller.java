@@ -80,6 +80,20 @@ public class Controller {
         return simpleCalculation.ppo2Calculation();
     }
     
+    public boolean ppo2CalculationInRange() {
+        if (simpleCalculation.validPPO2(this.ppo2Calculation())) {
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean modCalculationInRange() {
+        if (simpleCalculation.validDepth(this.modCalculation())) {
+            return true;
+        }
+        return false;
+    }
+    
     /**
      * @return Oxygen value as a Percentage
      */
@@ -94,11 +108,20 @@ public class Controller {
         return simpleCalculation.getPPO2();
     }
     
-        /**
+    /**
      * @return Depth in meters
      */
     public float getDepth() {
         return simpleCalculation.getDepth();
+    }
+    
+    /**
+     * Rounds the current PPO2 value to the nearest single decimal place
+     */
+    public void roundPPO2() {
+        float ppo2Value = simpleCalculation.getPPO2() * 10;
+        ppo2Value = Math.round(ppo2Value) / (float)10.0;
+        simpleCalculation.setPPO2(ppo2Value);
     }
     
      /**
