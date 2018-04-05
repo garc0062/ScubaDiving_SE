@@ -80,32 +80,19 @@ public class Controller {
         return simpleCalculation.ppo2Calculation();
     }
     
-    /**
-     * @return Oxygen value as a Percentage
+       /**
+     * Requests the result of the best Mix calculation from simpleCalculation
+     * @return Fraction of Oxygen in a decimal
      */
-    public int getOxygenInPercentage() {
-        return simpleCalculation.getOxygenInPercentage();
+    public float  bestMixCalculation(){
+        return simpleCalculation.bestMixCalculation();
     }
     
     /**
-     * @return Oxygen value as a Percentage
+     * Requests the result of the EAD calculation from simpleCalculation
+     * @return Equivalent Air Depth (EAD) Value in meter
      */
-    public float getPPO2() {
-        return simpleCalculation.getPPO2();
+    public float eadCalculation(){
+        return simpleCalculation.eadCalculation();
     }
-    
-        /**
-     * @return Depth in meters
-     */
-    public float getDepth() {
-        return simpleCalculation.getDepth();
-    }
-    
-     /**
-     * @return standard maximum depth in meters from model to view
-     */
-    public float smodCalculation() {
-        return simpleCalculation.smodCalculation();
-    }
-    
 }

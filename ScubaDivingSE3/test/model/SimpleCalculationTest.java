@@ -252,4 +252,40 @@ public class SimpleCalculationTest {
         instance.setOxygen(50);
         assertEquals(18.0F, instance.smodCalculation(), 0.1);
     }
+    
+    /**
+     * Test of bestMixCalculation method, of class SimpleCalculation.
+     */
+    @Test
+    public void testBestMixCalculation() {
+        System.out.println("BestMixCalculation");
+        SimpleCalculation instance = new SimpleCalculation();
+        instance.setDepth(30);
+        instance.setPPO2(1.4F);
+        assertEquals(0.046F, instance.bestMixCalculation(), 0.01);
+        instance.setDepth(40);
+        instance.setPPO2(1.2F);
+        assertEquals(0.03F, instance.bestMixCalculation(), 0.01);
+        instance.setDepth(50);
+        instance.setPPO2(1.3F);
+        assertEquals(0.025F, instance.bestMixCalculation(), 0.01);  
+    }
+
+    /**
+     * Test of eadCalculation method, of class SimpleCalculation.
+     */
+    @Test
+    public void testEadCalculation() {
+        System.out.println("eadCalculation");
+        SimpleCalculation instance = new SimpleCalculation();
+        instance.setDepth(4);
+        instance.setOxygen(25);
+        assertEquals(27.97F, instance.eadCalculation(), 0.01);
+       instance.setDepth(8);
+        instance.setOxygen(35);
+        assertEquals(55.82F, instance.eadCalculation(), 0.01);
+        instance.setDepth(10);
+        instance.setOxygen(45);
+        assertEquals(59.62F, instance.eadCalculation(), 0.01); 
+    }
 }
