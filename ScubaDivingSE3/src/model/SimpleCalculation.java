@@ -175,7 +175,6 @@ public class SimpleCalculation {
      */
     public float ppo2Calculation() {
         float newPPO2 = this.getOxygenInDecimal() * this.getAbsolutePressure();
-        System.out.println(newPPO2);
         return newPPO2;
     }
     
@@ -188,5 +187,35 @@ public class SimpleCalculation {
     public float smodCalculation() {
         setPPO2(STANDARD_PPO2_VALUE);
         return modCalculation();
+    }
+    
+         /**
+     * Calculates Best Mix in in decimal from current PPO2 value and 
+     * current depth value as meters
+     * 
+     * @return the Fraction of Oxygen in a decimal
+     */
+    
+    public float bestMixCalculation(){
+    
+        float bestMixResult= ppo2/depth;
+        
+        return bestMixResult;
+   
+    }
+    
+    /**
+     * Calculate  Equivalent Air Depth (EAD) from current
+     * oxygen value (as a decimal) and current depth value as meter 
+     * 
+     * @return Equivalent Air Depth (EAD) Value in meter
+     */
+    
+    public float eadCalculation(){
+        
+            float eadResult= (float) (((1-this.getOxygenInDecimal())*(depth))/0.79);
+            float eadAsmeter= this.getAtaAsMeters(eadResult);
+            return eadAsmeter;
+       
     }
 }

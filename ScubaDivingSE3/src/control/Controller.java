@@ -53,6 +53,22 @@ public class Controller {
     public boolean setOxygen(int oxygen) {
         return simpleCalculation.setOxygen(oxygen);
     }
+    
+    /**
+     * @return Depth in meters
+     */
+    public float getDepth() {
+        return simpleCalculation.getDepth();
+    }
+    
+    /**
+     * @return Oxygen value as a Percentage
+     */
+    public int getOxygenInPercentage() {
+        return simpleCalculation.getOxygenInPercentage();
+    }
+
+
 
     /**
      * Performs the setDepth method in simpleCalculation
@@ -80,11 +96,28 @@ public class Controller {
         return simpleCalculation.ppo2Calculation();
     }
     
+    public boolean ppo2CalculationInRange() {
+        if (simpleCalculation.validPPO2(this.ppo2Calculation())) {
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean modCalculationInRange() {
+        if (simpleCalculation.validDepth(this.modCalculation())) {
+            return true;
+        }
+        return false;
+    }
+    
     /**
      * @return Oxygen value as a Percentage
+       /**
+     * Requests the result of the best Mix calculation from simpleCalculation
+     * @return Fraction of Oxygen in a decimal
      */
-    public int getOxygenInPercentage() {
-        return simpleCalculation.getOxygenInPercentage();
+    public float  bestMixCalculation(){
+        return simpleCalculation.bestMixCalculation();
     }
     
     /**
@@ -94,11 +127,21 @@ public class Controller {
         return simpleCalculation.getPPO2();
     }
     
-        /**
-     * @return Depth in meters
+    /**
+     * Requests the result of the EAD calculation from simpleCalculation
+     * @return Equivalent Air Depth (EAD) Value in meter
      */
-    public float getDepth() {
-        return simpleCalculation.getDepth();
+    public float eadCalculation(){
+        return simpleCalculation.eadCalculation();
+    }
+    
+    /**
+     * Rounds the current PPO2 value to the nearest single decimal place
+     */
+    public void roundPPO2() {
+        float ppo2Value = simpleCalculation.getPPO2() * 10;
+        ppo2Value = Math.round(ppo2Value) / (float)10.0;
+        simpleCalculation.setPPO2(ppo2Value);
     }
     
      /**
@@ -107,5 +150,4 @@ public class Controller {
     public float smodCalculation() {
         return simpleCalculation.smodCalculation();
     }
-    
 }
