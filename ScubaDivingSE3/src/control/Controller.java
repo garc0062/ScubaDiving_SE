@@ -123,12 +123,11 @@ public class Controller {
         }
         return false;
     }
-    
     /**
      * @return Oxygen value as a Percentage
        /**
      * Requests the result of the best Mix calculation from simpleCalculation
-     * @return Fraction of Oxygen in a decimal
+     * @return Fraction of Oxygen 
      */
     public int  bestMixCalculation(){
         return simpleCalculation.bestMixCalculation();

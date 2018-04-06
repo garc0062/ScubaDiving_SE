@@ -49,6 +49,8 @@ public class ScubaDivingView extends javax.swing.JFrame {
         label2 = new java.awt.Label();
         sliderDepth = new javax.swing.JSlider();
         depth = new java.awt.TextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -188,6 +190,10 @@ public class ScubaDivingView extends javax.swing.JFrame {
         depth.setEditable(false);
         depth.setText("0");
 
+        jLabel1.setText("%");
+
+        jLabel2.setText("meters");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -207,7 +213,14 @@ public class ScubaDivingView extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Oxygen, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(depth, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel2)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -230,9 +243,13 @@ public class ScubaDivingView extends javax.swing.JFrame {
                                 .addComponent(sliderDepth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addComponent(Oxygen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Oxygen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
                         .addGap(31, 31, 31)
-                        .addComponent(depth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(depth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
@@ -280,11 +297,12 @@ public class ScubaDivingView extends javax.swing.JFrame {
     }//GEN-LAST:event_sliderOxygenStateChanged
 
     private void eadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eadButtonActionPerformed
-        String resultEAD = (String.valueOf(controller.eadCalculation()));
+            String resultEAD = (String.valueOf(controller.eadCalculation()));
         String result = "<html>The Equivalent Air Depth value for an  " +
                 "oxygen value of " + controller.getOxygenInPercentage() + "<br>" +
                 "and a depth of " + controller.getDepth() + " is: <br><br>" + 
                 "<strong>" + resultEAD;
+        if (sliderDepth.getValue()!=0){
         if (controller.eadCalculationInRange()) {
             controller.setDepth(controller.eadCalculation());
             setViewValues();
@@ -294,7 +312,9 @@ public class ScubaDivingView extends javax.swing.JFrame {
         }
         result += "</strong></html>";
         simpleResult.setText(result);
-           
+        }
+        else 
+            simpleResult.setText("Please, select the depth value");
     }//GEN-LAST:event_eadButtonActionPerformed
 
     private void modButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modButtonActionPerformed
@@ -332,7 +352,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
     }//GEN-LAST:event_ppo2ButtonActionPerformed
 
     private void bestMixButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bestMixButtonActionPerformed
-        String resultBM = String.valueOf(controller.bestMixCalculation());
+      String resultBM = String.valueOf(controller.bestMixCalculation());
         String result = "<html>The best Mix value for an " +
                 "depth value of " + controller.getDepth()+ "<br>" +
                 "and a ppo2 of " + controller.getPPO2() + " is: <br><br>" + 
@@ -350,9 +370,9 @@ public class ScubaDivingView extends javax.swing.JFrame {
     private void smodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smodButtonActionPerformed
         String resultSMOD = String.valueOf(controller.smodCalculation());
         String result = "<html>The SMOD value for an  <br>" +
-                "oxygen value of " + controller.getOxygenInPercentage() + "<br>" +
-                "and a PPO2 of " + controller.getPPO2() + " is: <br><br>" + 
-                "<strong>" + resultSMOD + "</strong></html>";
+                "oxygen value of " + controller.getOxygenInPercentage() + "%<br>" +
+                "and a PPO2 of " + controller.getPPO2() + " ata is: <br><br>" + 
+                "<strong>" + resultSMOD + " meters</strong></html>";
         simpleResult.setText(result);
         setViewValues();
     }//GEN-LAST:event_smodButtonActionPerformed
@@ -408,6 +428,8 @@ public class ScubaDivingView extends javax.swing.JFrame {
     private javax.swing.JButton bestMixButton;
     private java.awt.TextField depth;
     private javax.swing.JButton eadButton;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
