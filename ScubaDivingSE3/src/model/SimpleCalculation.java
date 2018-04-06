@@ -60,7 +60,7 @@ public class SimpleCalculation {
     /**
      * Converts and returns absolute pressure at depth from depth in meters
      
-     * @return oxygen in decimal
+     * @return Depth in ata
      */
     public float getAbsolutePressure() {
         return (float)depth/10 + 1;
@@ -189,19 +189,18 @@ public class SimpleCalculation {
         return modCalculation();
     }
     
-         /**
-     * Calculates Best Mix in in decimal from current PPO2 value and 
+    /**
+     * Calculates Best Mix from current PPO2 value and 
      * current depth value as meters
      * 
-     * @return the Fraction of Oxygen in a decimal
+     * @return the Fraction of Oxygen in percentage if the resulting value if valid. -1 otherwise.
      */
-    
     public float bestMixCalculation(){
-    
-        float bestMixResult= ppo2/depth;
-        
-        return bestMixResult;
-   
+        float bestMixResult= ppo2/getAbsolutePressure();
+        if(setOxygen(convertDecimalToPercentage(bestMixResult))){
+            return oxygen;
+        }
+        return -1;
     }
     
     /**
@@ -211,11 +210,15 @@ public class SimpleCalculation {
      * @return Equivalent Air Depth (EAD) Value in meter
      */
     
-    public float eadCalculation(){
-        
-            float eadResult= (float) (((1-this.getOxygenInDecimal())*(depth))/0.79);
-            float eadAsmeter= this.getAtaAsMeters(eadResult);
-            return eadAsmeter;
-       
+    public float eadCalculation(){     
+        float eadResult= (float) (((1-this.getOxygenInDecimal())*(getAbsolutePressure()))/0.79);            
+        return this.getAtaAsMeters(eadResult);
+    }
+
+    /**
+     * @return The equivalent value in percentage from a decimal value
+     */
+    private int convertDecimalToPercentage(float bestMixResult) {
+        return (int)Math.round(100 * bestMixResult);
     }
 }
