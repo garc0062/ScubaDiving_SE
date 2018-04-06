@@ -21,9 +21,11 @@ public class SimpleCalculation {
     //Range for Oxygen values
     public static final int MIN_OXYGEN_VALUE = 22;
     public static final int MAX_OXYGEN_VALUE = 50;
+    
     //Min value of depth
     public static final int MIN_DEPTH_VALUE = 0;
-
+    public static final int MAX_DEPTH_VALUE = 68;
+    
     int oxygen = 22;
     float ppo2 = (float)1.1;
     float depth;
@@ -149,7 +151,7 @@ public class SimpleCalculation {
      * @return true if value is within range. False otherwise.
      */
     public boolean validDepth(float depth){
-        if (depth >= MIN_DEPTH_VALUE) {
+        if (depth >= MIN_DEPTH_VALUE && depth<=MAX_DEPTH_VALUE) {
             return true;
         }
         return false;
@@ -195,12 +197,10 @@ public class SimpleCalculation {
      * 
      * @return the Fraction of Oxygen in percentage if the resulting value if valid. -1 otherwise.
      */
-    public float bestMixCalculation(){
+    public int bestMixCalculation(){
         float bestMixResult= ppo2/getAbsolutePressure();
-        if(setOxygen(convertDecimalToPercentage(bestMixResult))){
-            return oxygen;
-        }
-        return -1;
+       int newoxygen=(convertDecimalToPercentage(bestMixResult));
+            return newoxygen;
     }
     
     /**

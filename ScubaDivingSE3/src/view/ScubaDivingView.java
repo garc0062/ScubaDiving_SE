@@ -280,7 +280,21 @@ public class ScubaDivingView extends javax.swing.JFrame {
     }//GEN-LAST:event_sliderOxygenStateChanged
 
     private void eadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eadButtonActionPerformed
-           simpleResult.setText(String.valueOf(controller.eadCalculation()));
+        String resultEAD = (String.valueOf(controller.eadCalculation()));
+        String result = "<html>The Equivalent Air Depth value for an  " +
+                "oxygen value of " + controller.getOxygenInPercentage() + "<br>" +
+                "and a depth of " + controller.getDepth() + " is: <br><br>" + 
+                "<strong>" + resultEAD;
+        if (controller.eadCalculationInRange()) {
+            controller.setDepth(controller.eadCalculation());
+            setViewValues();
+        }
+        else {
+            result += "<br><br>WARNING: The safe value of depth is 68 meters, after which it becomes toxic ";
+        }
+        result += "</strong></html>";
+        simpleResult.setText(result);
+           
     }//GEN-LAST:event_eadButtonActionPerformed
 
     private void modButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modButtonActionPerformed
@@ -318,13 +332,19 @@ public class ScubaDivingView extends javax.swing.JFrame {
     }//GEN-LAST:event_ppo2ButtonActionPerformed
 
     private void bestMixButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bestMixButtonActionPerformed
-        float bestMix = controller.bestMixCalculation();
-        if(bestMix != -1){
-            simpleResult.setText(String.valueOf(bestMix));
+        String resultBM = String.valueOf(controller.bestMixCalculation());
+        String result = "<html>The best Mix value for an " +
+                "depth value of " + controller.getDepth()+ "<br>" +
+                "and a ppo2 of " + controller.getPPO2() + " is: <br><br>" + 
+                "<strong>" + resultBM;
+        if(controller.bestMixCalculationInRange()){
+              controller.setOxygen(controller.bestMixCalculation());
             setViewValues();    
         }else{
-            simpleResult.setText("Value outside of range");
+            result += "<br><be> WARNING: Value outside of range"+ " the oxygen value sholud become between 22% and 50%";
         }
+        result += "</strong></html>";
+        simpleResult.setText(result);
     }//GEN-LAST:event_bestMixButtonActionPerformed
 
     private void smodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smodButtonActionPerformed

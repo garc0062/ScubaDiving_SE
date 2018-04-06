@@ -110,13 +110,27 @@ public class Controller {
         return false;
     }
     
+    public boolean eadCalculationInRange() {
+        if (simpleCalculation.validDepth(this.eadCalculation())) {
+            return true;
+        }
+        return false;
+    }
+    
+      public boolean bestMixCalculationInRange() {
+        if (simpleCalculation.validOxygen(this.bestMixCalculation())) {
+            return true;
+        }
+        return false;
+    }
+    
     /**
      * @return Oxygen value as a Percentage
        /**
      * Requests the result of the best Mix calculation from simpleCalculation
      * @return Fraction of Oxygen in a decimal
      */
-    public float  bestMixCalculation(){
+    public int  bestMixCalculation(){
         return simpleCalculation.bestMixCalculation();
     }
     
