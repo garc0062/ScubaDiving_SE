@@ -318,7 +318,13 @@ public class ScubaDivingView extends javax.swing.JFrame {
     }//GEN-LAST:event_ppo2ButtonActionPerformed
 
     private void bestMixButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bestMixButtonActionPerformed
-        simpleResult.setText(String.valueOf(controller.bestMixCalculation()));
+        float bestMix = controller.bestMixCalculation();
+        if(bestMix != -1){
+            simpleResult.setText(String.valueOf(bestMix));
+            setViewValues();    
+        }else{
+            simpleResult.setText("Value outside of range");
+        }
     }//GEN-LAST:event_bestMixButtonActionPerformed
 
     private void smodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smodButtonActionPerformed
