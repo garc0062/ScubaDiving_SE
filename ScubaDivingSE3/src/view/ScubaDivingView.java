@@ -6,6 +6,7 @@
 package view;
 
 import control.Controller;
+import model.SimpleCalculation;
 
 /**
  *
@@ -297,90 +298,29 @@ public class ScubaDivingView extends javax.swing.JFrame {
     }//GEN-LAST:event_sliderOxygenStateChanged
 
     private void eadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eadButtonActionPerformed
-            String resultEAD = (String.valueOf(controller.eadCalculation()));
-        String result = "<html>The Equivalent Air Depth value for an  " +
-                "oxygen value of " + controller.getOxygenInPercentage() + "<br>" +
-                "and a depth of " + controller.getDepth() + " is: <br><br>" + 
-                "<strong>" + resultEAD;
-        if (sliderDepth.getValue()!=0){
-        if (controller.eadCalculationInRange()) {
-            controller.setDepth(controller.eadCalculation());
-            setViewValues();
-        }
-        else {
-            result += "<br><br>WARNING: The safe value of depth is 68 meters, after which it becomes toxic ";
-        }
-        result += "</strong></html>";
-        simpleResult.setText(result);
-        }
-        else 
-            simpleResult.setText("Please, select the depth value");
+        simpleResult.setText(controller.eadCalculation());
     }//GEN-LAST:event_eadButtonActionPerformed
 
     private void modButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modButtonActionPerformed
-        String resultMOD = (String.valueOf(controller.modCalculation()));
-        String result = "<html>The Maximum Operating Depth value for an  <br>" +
-                "oxygen value of " + controller.getOxygenInPercentage() + "<br>" +
-                "and a PPO2 of " + controller.getPPO2() + " is: <br><br>" + 
-                "<strong>" + resultMOD;
-        if (controller.modCalculationInRange()) {
-            setViewValues();
-        }
-        else {
-            result += "<br><br>WARNING: This value exceeds the depth range of 0-100 metres";
-        }
-        result += "</strong></html>";
-        simpleResult.setText(result);
+        simpleResult.setText(controller.modCalculation());
     }//GEN-LAST:event_modButtonActionPerformed
 
     private void ppo2ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppo2ButtonActionPerformed
-        String resultPPO2 = String.valueOf(controller.ppo2Calculation());
-        String result = "<html>The PPO2 value for an  <br>" +
-                "oxygen value of " + controller.getOxygenInPercentage() + "<br>" +
-                "and a depth of " + controller.getDepth() + " metres is: <br><br>" + 
-                "<strong>" + resultPPO2;
-        if (controller.ppo2CalculationInRange()) {
-            controller.setPPO2(controller.ppo2Calculation());
-            controller.roundPPO2();
-            setViewValues();
-        }
-        else {
-            result += "<br><br>WARNING: This value exceeds the recommended PPO2 range of 1.1-1.6 ata";
-        }
-        result += "</strong></html>";
-        simpleResult.setText(result);
+        simpleResult.setText(controller.ppo2Calculation());
     }//GEN-LAST:event_ppo2ButtonActionPerformed
 
     private void bestMixButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bestMixButtonActionPerformed
-      String resultBM = String.valueOf(controller.bestMixCalculation());
-        String result = "<html>The best Mix value for an " +
-                "depth value of " + controller.getDepth()+ "<br>" +
-                "and a ppo2 of " + controller.getPPO2() + " is: <br><br>" + 
-                "<strong>" + resultBM;
-        if(controller.bestMixCalculationInRange()){
-              controller.setOxygen(controller.bestMixCalculation());
-            setViewValues();    
-        }else{
-            result += "<br><be> WARNING: Value outside of range"+ " the oxygen value sholud become between 22% and 50%";
-        }
-        result += "</strong></html>";
-        simpleResult.setText(result);
+        simpleResult.setText(controller.bestMixCalculation());
     }//GEN-LAST:event_bestMixButtonActionPerformed
 
     private void smodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smodButtonActionPerformed
-        String resultSMOD = String.valueOf(controller.smodCalculation());
-        String result = "<html>The SMOD value for an  <br>" +
-                "oxygen value of " + controller.getOxygenInPercentage() + "%<br>" +
-                "and a PPO2 of " + controller.getPPO2() + " ata is: <br><br>" + 
-                "<strong>" + resultSMOD + " meters</strong></html>";
-        simpleResult.setText(result);
-        setViewValues();
+        simpleResult.setText(controller.smodCalculation());
     }//GEN-LAST:event_smodButtonActionPerformed
-    
+
     /*
-    *Set values in view according to calculation     
-    */
-    public void setViewValues(){
+     *Set values in view according to calculation     
+     */
+    public void setViewValues() {
         sliderDepth.setValue(Math.round(controller.getDepth()));
         sliderOxygen.setValue(controller.getOxygenInPercentage());
         ppo2.getModel().setSelectedItem(controller.getPPO2());
