@@ -6,6 +6,12 @@
 package view;
 
 import control.Controller;
+import java.awt.BorderLayout;
+import java.awt.Graphics2D;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import model.ComplexCalculation;
 import model.SimpleCalculation;
 
 /**
@@ -21,6 +27,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
      */
     public ScubaDivingView(Controller controller) {
         initComponents();
+        initVerticalLabel();
         this.controller = controller;
     }
 
@@ -33,8 +40,8 @@ public class ScubaDivingView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        simpleResult = new javax.swing.JLabel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel4 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         bestMixButton = new javax.swing.JButton();
         eadButton = new javax.swing.JButton();
@@ -52,29 +59,37 @@ public class ScubaDivingView extends javax.swing.JFrame {
         depth = new java.awt.TextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        simpleResult = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        inputsComplexCalculations = new javax.swing.JPanel();
+        label5 = new java.awt.Label();
+        sliderOxygenStart = new javax.swing.JSlider();
+        OxygenStart = new java.awt.TextField();
+        jLabel3 = new javax.swing.JLabel();
+        label9 = new java.awt.Label();
+        sliderOxygenEnd = new javax.swing.JSlider();
+        OxygenEnd = new java.awt.TextField();
+        jLabel7 = new javax.swing.JLabel();
+        inputsComplexCalculations1 = new javax.swing.JPanel();
+        label8 = new java.awt.Label();
+        sliderDepthEnd = new javax.swing.JSlider();
+        depthEnd = new java.awt.TextField();
+        jLabel6 = new javax.swing.JLabel();
+        label10 = new java.awt.Label();
+        sliderDepthStart = new javax.swing.JSlider();
+        depthStart = new java.awt.TextField();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tableComplexCalculations = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Result"));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(simpleResult, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(simpleResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Simple Calculations"));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Calculations"));
 
         bestMixButton.setText("Best Mix");
         bestMixButton.addActionListener(new java.awt.event.ActionListener() {
@@ -208,7 +223,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(ppo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sliderOxygen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
+                    .addComponent(sliderOxygen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(sliderDepth, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -221,7 +236,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addComponent(jLabel2)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,33 +266,353 @@ public class ScubaDivingView extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(depth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Result"));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(simpleResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(simpleResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Simple Calculations", jPanel4);
+
+        inputsComplexCalculations.setBorder(javax.swing.BorderFactory.createTitledBorder("Oxigen"));
+
+        label5.setText("Start:");
+
+        sliderOxygenStart.setMajorTickSpacing(4);
+        sliderOxygenStart.setMaximum(50);
+        sliderOxygenStart.setMinimum(18);
+        sliderOxygenStart.setMinorTickSpacing(1);
+        sliderOxygenStart.setPaintLabels(true);
+        sliderOxygenStart.setPaintTicks(true);
+        sliderOxygenStart.setSnapToTicks(true);
+        sliderOxygenStart.setToolTipText("");
+        sliderOxygenStart.setValue(18);
+        sliderOxygenStart.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                sliderOxygenStartStateChanged(evt);
+            }
+        });
+
+        OxygenStart.setEditable(false);
+        OxygenStart.setText("18");
+
+        jLabel3.setText("%");
+
+        label9.setText("End:");
+
+        sliderOxygenEnd.setMajorTickSpacing(4);
+        sliderOxygenEnd.setMaximum(50);
+        sliderOxygenEnd.setMinimum(18);
+        sliderOxygenEnd.setMinorTickSpacing(1);
+        sliderOxygenEnd.setPaintLabels(true);
+        sliderOxygenEnd.setPaintTicks(true);
+        sliderOxygenEnd.setSnapToTicks(true);
+        sliderOxygenEnd.setToolTipText("");
+        sliderOxygenEnd.setValue(18);
+        sliderOxygenEnd.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                sliderOxygenEndStateChanged(evt);
+            }
+        });
+
+        OxygenEnd.setEditable(false);
+        OxygenEnd.setText("18");
+
+        jLabel7.setText("%");
+
+        javax.swing.GroupLayout inputsComplexCalculationsLayout = new javax.swing.GroupLayout(inputsComplexCalculations);
+        inputsComplexCalculations.setLayout(inputsComplexCalculationsLayout);
+        inputsComplexCalculationsLayout.setHorizontalGroup(
+            inputsComplexCalculationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(inputsComplexCalculationsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(inputsComplexCalculationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(inputsComplexCalculationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(inputsComplexCalculationsLayout.createSequentialGroup()
+                        .addComponent(sliderOxygenStart, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(OxygenStart, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2)
+                        .addComponent(jLabel3))
+                    .addGroup(inputsComplexCalculationsLayout.createSequentialGroup()
+                        .addComponent(sliderOxygenEnd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(OxygenEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2)
+                        .addComponent(jLabel7)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        inputsComplexCalculationsLayout.setVerticalGroup(
+            inputsComplexCalculationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(inputsComplexCalculationsLayout.createSequentialGroup()
+                .addGroup(inputsComplexCalculationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sliderOxygenStart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(inputsComplexCalculationsLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(inputsComplexCalculationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(OxygenStart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(inputsComplexCalculationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sliderOxygenEnd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(inputsComplexCalculationsLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(inputsComplexCalculationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(OxygenEnd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7)))))
+        );
+
+        inputsComplexCalculations1.setBorder(javax.swing.BorderFactory.createTitledBorder("Depth"));
+
+        label8.setText("End:");
+
+        sliderDepthEnd.setMajorTickSpacing(10);
+        sliderDepthEnd.setMaximum(70);
+        sliderDepthEnd.setMinimum(3);
+        sliderDepthEnd.setMinorTickSpacing(1);
+        sliderDepthEnd.setPaintLabels(true);
+        sliderDepthEnd.setPaintTicks(true);
+        sliderDepthEnd.setSnapToTicks(true);
+        sliderDepthEnd.setToolTipText("");
+        sliderDepthEnd.setValue(3);
+        sliderDepthEnd.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                sliderDepthEndStateChanged(evt);
+            }
+        });
+
+        depthEnd.setEditable(false);
+        depthEnd.setText("3");
+
+        jLabel6.setText("meters");
+
+        label10.setText("start:");
+
+        sliderDepthStart.setMajorTickSpacing(10);
+        sliderDepthStart.setMaximum(70);
+        sliderDepthStart.setMinimum(3);
+        sliderDepthStart.setMinorTickSpacing(1);
+        sliderDepthStart.setPaintLabels(true);
+        sliderDepthStart.setPaintTicks(true);
+        sliderDepthStart.setSnapToTicks(true);
+        sliderDepthStart.setToolTipText("");
+        sliderDepthStart.setValue(3);
+        sliderDepthStart.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                sliderDepthStartStateChanged(evt);
+            }
+        });
+
+        depthStart.setEditable(false);
+        depthStart.setText("3");
+
+        jLabel8.setText("meters");
+
+        javax.swing.GroupLayout inputsComplexCalculations1Layout = new javax.swing.GroupLayout(inputsComplexCalculations1);
+        inputsComplexCalculations1.setLayout(inputsComplexCalculations1Layout);
+        inputsComplexCalculations1Layout.setHorizontalGroup(
+            inputsComplexCalculations1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(inputsComplexCalculations1Layout.createSequentialGroup()
+                .addComponent(label10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sliderDepthStart, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(depthStart, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addComponent(jLabel8))
+            .addGroup(inputsComplexCalculations1Layout.createSequentialGroup()
+                .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sliderDepthEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(depthEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addComponent(jLabel6))
+        );
+        inputsComplexCalculations1Layout.setVerticalGroup(
+            inputsComplexCalculations1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(inputsComplexCalculations1Layout.createSequentialGroup()
+                .addGroup(inputsComplexCalculations1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(inputsComplexCalculations1Layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(label10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sliderDepthStart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(inputsComplexCalculations1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(inputsComplexCalculations1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(depthStart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))))
+                .addGroup(inputsComplexCalculations1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(inputsComplexCalculations1Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(inputsComplexCalculations1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(inputsComplexCalculations1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(depthEnd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)))
+                    .addGroup(inputsComplexCalculations1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(sliderDepthEnd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder("Complex Calculations"));
+
+        jButton1.setText("Generate EDA Table");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Generate PPO2 Table");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton1)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap())
+        );
+
+        jScrollPane2.setBorder(javax.swing.BorderFactory.createTitledBorder("Results"));
+
+        tableComplexCalculations.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "D/O"
+            }
+        ));
+        jScrollPane2.setViewportView(tableComplexCalculations);
+
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        jLabel5.setLabelFor(tableComplexCalculations);
+        jLabel5.setText("----------------------------------------------------------------------------OXYGEN------------------------------------------------------------------------>");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(inputsComplexCalculations, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(inputsComplexCalculations1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2))
+                .addContainerGap(66, Short.MAX_VALUE))
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGap(20, 20, 20)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(688, Short.MAX_VALUE)))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(inputsComplexCalculations, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(inputsComplexCalculations1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(58, Short.MAX_VALUE))
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                    .addContainerGap(613, Short.MAX_VALUE)
+                    .addComponent(jLabel5)
+                    .addGap(16, 16, 16)))
+        );
+
+        jTabbedPane1.addTab("Complex Calculations", jPanel5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(24, 24, 24))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 770, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
 
         pack();
@@ -317,6 +652,43 @@ public class ScubaDivingView extends javax.swing.JFrame {
         simpleResult.setText(controller.smodCalculation());
     }//GEN-LAST:event_smodButtonActionPerformed
 
+    private void sliderOxygenStartStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderOxygenStartStateChanged
+        controller.setOxygenStart(sliderOxygenStart.getValue());
+        OxygenStart.setText(String.valueOf(sliderOxygenStart.getValue()));
+        OxygenEnd.setText(String.valueOf(controller.getComplexCalculation().getOxygenEnd()));
+        sliderOxygenEnd.setValue(controller.getComplexCalculation().getOxygenEnd());
+    }//GEN-LAST:event_sliderOxygenStartStateChanged
+
+    private void sliderDepthEndStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderDepthEndStateChanged
+        controller.setDepthEnd(sliderDepthEnd.getValue());
+        depthEnd.setText(String.valueOf(sliderDepthEnd.getValue()));
+        depthStart.setText(String.valueOf(controller.getComplexCalculation().getDepthStart()));
+        sliderDepthStart.setValue(controller.getComplexCalculation().getDepthStart());
+    }//GEN-LAST:event_sliderDepthEndStateChanged
+
+    private void sliderOxygenEndStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderOxygenEndStateChanged
+        controller.setOxygenEnd(sliderOxygenEnd.getValue());
+        OxygenEnd.setText(String.valueOf(sliderOxygenEnd.getValue()));
+        OxygenStart.setText(String.valueOf(controller.getComplexCalculation().getOxygenStart()));
+        sliderOxygenStart.setValue(controller.getComplexCalculation().getOxygenStart());
+    }//GEN-LAST:event_sliderOxygenEndStateChanged
+
+    private void sliderDepthStartStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderDepthStartStateChanged
+        controller.setDepthStart(sliderDepthStart.getValue());
+        depthStart.setText(String.valueOf(sliderDepthStart.getValue()));
+        depthEnd.setText(String.valueOf(controller.getComplexCalculation().getDepthEnd()));
+        sliderDepthEnd.setValue(controller.getComplexCalculation().getDepthEnd());
+    }//GEN-LAST:event_sliderDepthStartStateChanged
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        controller.generateEADTable();
+        // jScrollPane2.set
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        controller.generatePPO2Table();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /*
      *Set values in view according to calculation     
      */
@@ -324,6 +696,10 @@ public class ScubaDivingView extends javax.swing.JFrame {
         sliderDepth.setValue(Math.round(controller.getDepth()));
         sliderOxygen.setValue(controller.getOxygenInPercentage());
         ppo2.getModel().setSelectedItem(controller.getPPO2());
+    }
+
+    public JTable getTableComplexCalculations() {
+        return tableComplexCalculations;
     }
 
     /**
@@ -365,23 +741,60 @@ public class ScubaDivingView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.TextField Oxygen;
+    private java.awt.TextField OxygenEnd;
+    private java.awt.TextField OxygenStart;
     private javax.swing.JButton bestMixButton;
     private java.awt.TextField depth;
+    private java.awt.TextField depthEnd;
+    private java.awt.TextField depthStart;
     private javax.swing.JButton eadButton;
+    private javax.swing.JPanel inputsComplexCalculations;
+    private javax.swing.JPanel inputsComplexCalculations1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private java.awt.Label label1;
+    private java.awt.Label label10;
     private java.awt.Label label2;
     private java.awt.Label label3;
+    private java.awt.Label label5;
+    private java.awt.Label label8;
+    private java.awt.Label label9;
     private javax.swing.JButton modButton;
     private javax.swing.JComboBox ppo2;
     private javax.swing.JButton ppo2Button;
     private javax.swing.JLabel simpleResult;
     private javax.swing.JSlider sliderDepth;
+    private javax.swing.JSlider sliderDepthEnd;
+    private javax.swing.JSlider sliderDepthStart;
     private javax.swing.JSlider sliderOxygen;
+    private javax.swing.JSlider sliderOxygenEnd;
+    private javax.swing.JSlider sliderOxygenStart;
     private javax.swing.JButton smodButton;
+    private javax.swing.JTable tableComplexCalculations;
     // End of variables declaration//GEN-END:variables
+
+    private void initVerticalLabel() {
+        VerticalLabel verticalLabel = new VerticalLabel();
+        verticalLabel.setText("Depth");
+        verticalLabel.setVisible(true);
+        jPanel7.add(verticalLabel, BorderLayout.EAST);
+        jPanel5.add(new JLabel("NEW"));
+        pack();
+        setVisible(true);
+    }
 }

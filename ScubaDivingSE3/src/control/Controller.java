@@ -5,8 +5,18 @@
  */
 package control;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.text.DecimalFormat;
+import java.util.List;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.border.Border;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
+import model.ComplexCalculation;
 import model.SimpleCalculation;
+import sun.swing.table.DefaultTableCellHeaderRenderer;
 import view.ScubaDivingView;
 
 /**
@@ -17,6 +27,7 @@ public class Controller {
 
     private final ScubaDivingView view;
     private final SimpleCalculation simpleCalculation;
+    private final ComplexCalculation complexCalculation;
     DecimalFormat formatter;
 
     /**
@@ -26,6 +37,7 @@ public class Controller {
     public Controller() {
         this.view = new ScubaDivingView(this);
         this.simpleCalculation = new SimpleCalculation();
+        this.complexCalculation = new ComplexCalculation();
         this.formatter = new DecimalFormat("#0.0");
     }
 
@@ -57,18 +69,52 @@ public class Controller {
         return simpleCalculation.setOxygen(oxygen);
     }
 
+    public void setOxygenStart(int oxygenStart) {
+        complexCalculation.setOxygenStart(oxygenStart);
+        if (complexCalculation.getOxygenEnd() < complexCalculation.getOxygenStart()) {
+            complexCalculation.setOxygenEnd(oxygenStart);
+        }
+    }
+
+    public void setOxygenEnd(int oxygenEnd) {
+        complexCalculation.setOxygenEnd(oxygenEnd);
+        if (complexCalculation.getOxygenEnd() < complexCalculation.getOxygenStart()) {
+            complexCalculation.setOxygenStart(oxygenEnd);
+        }
+    }
+
+    public void setDepthStart(int depthStart) {
+        complexCalculation.setDepthStart(depthStart);
+        if (complexCalculation.getDepthEnd() < complexCalculation.getDepthStart()) {
+            complexCalculation.setDepthEnd(depthStart);
+        }
+    }
+
+    public void setDepthEnd(int depthEnd) {
+        complexCalculation.setDepthEnd(depthEnd);
+        if (complexCalculation.getDepthEnd() < complexCalculation.getDepthStart()) {
+            complexCalculation.setDepthStart(depthEnd);
+        }
+    }
+
+    public ComplexCalculation getComplexCalculation() {
+        return complexCalculation;
+    }
+
     /**
      * @return Depth in meters
      */
     public float getDepth() {
         return simpleCalculation.getDepth();
     }
+
     /**
      * @return Oxygen value as a Percentage
      */
     public float getPPO2() {
         return simpleCalculation.getPPO2();
     }
+
     /**
      * @return Oxygen value as a Percentage
      */
@@ -163,7 +209,6 @@ public class Controller {
         if (resultEAD > 0) {
             result += formatter.format(resultEAD) + " meters";
         } else {
-            simpleCalculation.setDepth(resultEAD);
             result += "0.0 meters";
         }
         return result;
@@ -186,5 +231,67 @@ public class Controller {
                     + "the depth range of 0-100 metres</html>";
         }
         return result;
+    }
+
+    public void generateEADTable() {
+        generateTableByType(ComplexCalculation.TypeComplex.EAD);
+    }
+
+    public void generatePPO2Table() {
+        generateTableByType(ComplexCalculation.TypeComplex.PPO2);
+    }
+
+    /**
+     * Inserts the Map of DigitalHealthWordItem objects into the table model of
+     * the view.
+     */
+    public void generateTableByType(ComplexCalculation.TypeComplex type) {
+
+        DefaultTableModel tableModel = (DefaultTableModel) view.getTableComplexCalculations().getModel();
+        JTable table = view.getTableComplexCalculations();
+        complexCalculation.calculateTable(type);
+        tableModel.setDataVector(complexCalculation.getTableCalculation(), complexCalculation.getHeaders());
+        //JTable table = new JTable(complexCalculation.getTableCalculation(), complexCalculation.getHeaders());
+        //JTable table = new JTable(complexCalculation.getTableCalculation(), complexCalculation.getHeaders());//view.getTableComplexCalculations();
+        //table.setPreferredSize(new Dimension(50, 400));
+        TableColumn column = null;
+        for (int i = 0; i < table.getColumnCount(); i++) {
+            column = table.getColumnModel().getColumn(i);
+            column.setMaxWidth(60);
+            column.setMinWidth(60);
+            column.setPreferredWidth(60);
+            if (i == 0) {
+                column.setCellRenderer(new DefaultTableCellHeaderRenderer());
+            }
+        }
+
+        if (table.getPreferredSize().width < table.getParent().getWidth()) {
+            table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+        } else {
+            table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        }
+
+        //JScrollPane scrollPane = new JScrollPane(table);
+        //table.setFillsViewportHeight(true);
+        //view.getjPanel6().revalidate();
+        //view.getjPanel6().add(table.getTableHeader(), BorderLayout.PAGE_START);
+        //view.getjPanel6().add(table, BorderLayout.CENTER);
+
+
+        /*
+         JScrollPane scrollPane = new JScrollPane(mainTable);
+         JTable rowTable = new RowNumberTable(mainTable);
+         scrollPane.setRowHeaderView(rowTable);
+         scrollPane.setCorner(JScrollPane.UPPER_LEFT_CORNER,
+         rowTable.getTableHeader());
+         */
+        //table.setModel(null);
+        /*JScrollPane tableContainer = new JScrollPane(table);
+         //table.setVisible(true);
+         tableContainer.setVisible(true);
+         view.getjPanel6().setLayout(new BorderLayout());
+         view.getjPanel6().add(tableContainer, BorderLayout.CENTER);
+         view.getjPanel6().revalidate();
+         view.getjPanel6().repaint();*/
     }
 }
