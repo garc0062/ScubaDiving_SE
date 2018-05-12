@@ -3,9 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/pablo/Documents/NetBeansProjects/Scuba-Diving/ScubaDivingSE3/src/model/ComplexCalculation.java</file>
-            <file>file:/C:/Users/pablo/Documents/NetBeansProjects/Scuba-Diving/ScubaDivingSE3/test/model/SimpleCalculationTest.java</file>
-            <file>file:/C:/Users/pablo/Documents/NetBeansProjects/Scuba-Diving/ScubaDivingSE3/test/model/ComplexCalculationTest.java</file>
+            <file>file:/C:/Users/pablo/Documents/NetBeansProjects/Scuba-Diving/ScubaDivingSE3/src/view/ScubaDivingView.java</file>
+            <file>file:/C:/Users/pablo/Documents/NetBeansProjects/Scuba-Diving/ScubaDivingSE3/src/control/Controller.java</file>
         </group>
     </open-files>
 </project-private>

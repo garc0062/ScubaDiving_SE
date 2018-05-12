@@ -46,6 +46,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
                     "Depth\\Oxygen"
                 }
         ));
+        setResizable(false);
         this.controller = controller;
     }
 
