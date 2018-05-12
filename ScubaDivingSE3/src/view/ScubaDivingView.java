@@ -9,7 +9,14 @@ import control.Controller;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -28,10 +35,17 @@ public class ScubaDivingView extends javax.swing.JFrame {
 
     /**
      * Creates new form ScubaDivingView
+     * 
+     * @param controller controller of the program
      */
     public ScubaDivingView(Controller controller) {
         initComponents();
-        initVerticalLabel();                
+        tableComplexCalculations.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Depth\\Oxygen"
+                }
+        ));
         this.controller = controller;
     }
 
@@ -440,7 +454,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
                         .addComponent(OxygenEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(2, 2, 2)
                         .addComponent(jLabel7)))
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         inputsComplexCalculationsLayout.setVerticalGroup(
             inputsComplexCalculationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -590,8 +604,8 @@ public class ScubaDivingView extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(resultComplexCalculation))
-                .addGap(0, 43, Short.MAX_VALUE))
+                    .addComponent(resultComplexCalculation, javax.swing.GroupLayout.PREFERRED_SIZE, 812, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 65, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -760,21 +774,8 @@ public class ScubaDivingView extends javax.swing.JFrame {
     private javax.swing.JTable tableComplexCalculations;
     // End of variables declaration//GEN-END:variables
 
-    private void initVerticalLabel() {
-        VerticalLabel verticalLabel = new VerticalLabel();
-        verticalLabel.setText("Depth");
-        verticalLabel.setVisible(true);
-        jPanel5.add(verticalLabel, BorderLayout.NORTH);
-        //jPanel5.add(verticalLabel);
-        jPanel5.setLayout(new FlowLayout(FlowLayout.RIGHT));
-        
-        pack();
-        setVisible(true);
-    }
-
     public JScrollPane getResultComplexCalculation() {
         return resultComplexCalculation;
     }
-    
-    
+
 }
