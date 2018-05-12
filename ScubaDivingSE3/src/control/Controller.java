@@ -9,8 +9,11 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.text.DecimalFormat;
 import java.util.List;
+import javax.swing.BorderFactory;
+import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JViewport;
 import javax.swing.border.Border;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -255,43 +258,26 @@ public class Controller {
         //JTable table = new JTable(complexCalculation.getTableCalculation(), complexCalculation.getHeaders());//view.getTableComplexCalculations();
         //table.setPreferredSize(new Dimension(50, 400));
         TableColumn column = null;
+
+        String[] columns = new String[table.getRowCount()];
         for (int i = 0; i < table.getColumnCount(); i++) {
             column = table.getColumnModel().getColumn(i);
-            column.setMaxWidth(60);
-            column.setMinWidth(60);
-            column.setPreferredWidth(60);
+            column.setMaxWidth(40);
+            column.setMinWidth(40);
+            column.setPreferredWidth(40);
             if (i == 0) {
                 column.setCellRenderer(new DefaultTableCellHeaderRenderer());
             }
         }
-
-        if (table.getPreferredSize().width < table.getParent().getWidth()) {
-            table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
-        } else {
-            table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        for (int i = 0; i < table.getRowCount(); i++) {
+            columns[i] = "" + i;
         }
-
-        //JScrollPane scrollPane = new JScrollPane(table);
-        //table.setFillsViewportHeight(true);
-        //view.getjPanel6().revalidate();
-        //view.getjPanel6().add(table.getTableHeader(), BorderLayout.PAGE_START);
-        //view.getjPanel6().add(table, BorderLayout.CENTER);
-
-
-        /*
-         JScrollPane scrollPane = new JScrollPane(mainTable);
-         JTable rowTable = new RowNumberTable(mainTable);
-         scrollPane.setRowHeaderView(rowTable);
-         scrollPane.setCorner(JScrollPane.UPPER_LEFT_CORNER,
-         rowTable.getTableHeader());
-         */
-        //table.setModel(null);
-        /*JScrollPane tableContainer = new JScrollPane(table);
-         //table.setVisible(true);
-         tableContainer.setVisible(true);
-         view.getjPanel6().setLayout(new BorderLayout());
-         view.getjPanel6().add(tableContainer, BorderLayout.CENTER);
-         view.getjPanel6().revalidate();
-         view.getjPanel6().repaint();*/
+        
+        if (table.getPreferredSize().width < table.getParent().getWidth()) {
+            table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);            
+        } else {
+            table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);            
+        }
+        view.getResultComplexCalculation().setBorder(BorderFactory.createTitledBorder("Table for " + type.name() + " calculations"));
     }
 }

@@ -7,6 +7,7 @@ package view;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.geom.AffineTransform;
 import javax.swing.JLabel;
 
 /**
@@ -17,9 +18,13 @@ public class VerticalLabel extends JLabel {
 
     @Override
     public void paintComponent(Graphics g) {
-        super.paintComponent(g);
+        //super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
-        g2.rotate(Math.toRadians(90));
+        //g2.rotate(Math.toRadians(180));
+
+        g2.translate(0, getSize().getHeight());
+        g2.transform(AffineTransform.getQuadrantRotateInstance(-1));
+        super.paintComponent(g2);
     }
 
 }
