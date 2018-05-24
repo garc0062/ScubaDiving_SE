@@ -5,21 +5,15 @@
  */
 package control;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.text.DecimalFormat;
-import java.util.List;
 import javax.swing.BorderFactory;
-import javax.swing.JScrollBar;
-import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.JViewport;
-import javax.swing.border.Border;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import model.ComplexCalculation;
 import model.SimpleCalculation;
-import sun.swing.table.DefaultTableCellHeaderRenderer;
+import javax.swing.table.DefaultTableCellRenderer;
+import view.DefaultTableHeaderCellRenderer;
 import view.ScubaDivingView;
 
 /**
@@ -236,47 +230,47 @@ public class Controller {
         return result;
     }
 
+    /**
+     * Populates table with EAD values.
+     */
     public void generateEADTable() {
         generateTableByType(ComplexCalculation.TypeComplex.EAD);
     }
 
+    /**
+     * Populates table with PPO2 values.
+     */
     public void generatePPO2Table() {
         generateTableByType(ComplexCalculation.TypeComplex.PPO2);
     }
 
     /**
-     * Inserts the Map of DigitalHealthWordItem objects into the table model of
-     * the view.
+     * Populates table with complex calculations depending on type.
+     *
+     * @param type: type of complex calculation, namely either EAD or PPO2.
      */
     public void generateTableByType(ComplexCalculation.TypeComplex type) {
-
         DefaultTableModel tableModel = (DefaultTableModel) view.getTableComplexCalculations().getModel();
         JTable table = view.getTableComplexCalculations();
         complexCalculation.calculateTable(type);
         tableModel.setDataVector(complexCalculation.getTableCalculation(), complexCalculation.getHeaders());
-        //JTable table = new JTable(complexCalculation.getTableCalculation(), complexCalculation.getHeaders());
-        //JTable table = new JTable(complexCalculation.getTableCalculation(), complexCalculation.getHeaders());//view.getTableComplexCalculations();
-        //table.setPreferredSize(new Dimension(50, 400));
         TableColumn column = null;
 
-        String[] columns = new String[table.getRowCount()];
         for (int i = 0; i < table.getColumnCount(); i++) {
             column = table.getColumnModel().getColumn(i);
             column.setMaxWidth(40);
             column.setMinWidth(40);
             column.setPreferredWidth(40);
             if (i == 0) {
-                column.setCellRenderer(new DefaultTableCellHeaderRenderer());
+                column.setCellRenderer(new DefaultTableHeaderCellRenderer());
             }
         }
-        for (int i = 0; i < table.getRowCount(); i++) {
-            columns[i] = "" + i;
-        }
         
+        //table.getTableHeader().getre
         if (table.getPreferredSize().width < table.getParent().getWidth()) {
-            table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);            
+            table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         } else {
-            table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);            
+            table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         }
         view.getResultComplexCalculation().setBorder(BorderFactory.createTitledBorder("Table for " + type.name() + " calculations"));
     }
