@@ -8,6 +8,8 @@ package view;
 import control.Controller;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import model.Cylinder;
+import model.SimpleCalculation;
 
 /**
  *
@@ -30,6 +32,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
                     "Depth\\Oxygen"
                 }
         ));
+        cylinderPanel1.setCylinder(new Cylinder(SimpleCalculation.MIN_OXYGEN_VALUE));
         setResizable(false);
         this.controller = controller;
     }
@@ -64,6 +67,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         simpleResult = new javax.swing.JLabel();
+        cylinderPanel1 = new view.CylinderPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -144,7 +148,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
                 .addComponent(ppo2Button)
                 .addGap(18, 18, 18)
                 .addComponent(smodButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(435, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -291,6 +295,19 @@ public class ScubaDivingView extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        cylinderPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Oxygen - Nitrogen Cylinder"));
+
+        javax.swing.GroupLayout cylinderPanel1Layout = new javax.swing.GroupLayout(cylinderPanel1);
+        cylinderPanel1.setLayout(cylinderPanel1Layout);
+        cylinderPanel1Layout.setHorizontalGroup(
+            cylinderPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        cylinderPanel1Layout.setVerticalGroup(
+            cylinderPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 296, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -298,6 +315,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cylinderPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -314,7 +332,9 @@ public class ScubaDivingView extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cylinderPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Simple Calculations", jPanel4);
@@ -715,6 +735,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
     private java.awt.TextField OxygenEnd;
     private java.awt.TextField OxygenStart;
     private javax.swing.JButton bestMixButton;
+    private view.CylinderPanel cylinderPanel1;
     private java.awt.TextField depth;
     private java.awt.TextField depthEnd;
     private java.awt.TextField depthStart;
