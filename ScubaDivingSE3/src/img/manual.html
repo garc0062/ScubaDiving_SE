@@ -1,0 +1,784 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+h1
+	{mso-style-link:"Título 1 Car";
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri Light","sans-serif";
+	color:#2E74B5;
+	font-weight:normal;}
+h2
+	{mso-style-link:"Título 2 Car";
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Calibri Light","sans-serif";
+	color:#2E74B5;
+	font-weight:normal;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:11.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{mso-style-link:"Texto comentario Car";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{mso-style-link:"Asunto del comentario Car";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Texto de globo Car";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Segoe UI","sans-serif";}
+p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:36.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:36.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri Light","sans-serif";
+	color:#2E74B5;}
+span.Ttulo1Car
+	{mso-style-name:"Título 1 Car";
+	mso-style-link:"Título 1";
+	font-family:"Calibri Light","sans-serif";
+	color:#2E74B5;}
+span.Ttulo2Car
+	{mso-style-name:"Título 2 Car";
+	mso-style-link:"Título 2";
+	font-family:"Calibri Light","sans-serif";
+	color:#2E74B5;}
+span.TextocomentarioCar
+	{mso-style-name:"Texto comentario Car";
+	mso-style-link:"Texto comentario";}
+span.AsuntodelcomentarioCar
+	{mso-style-name:"Asunto del comentario Car";
+	mso-style-link:"Asunto del comentario";
+	font-weight:bold;}
+span.TextodegloboCar
+	{mso-style-name:"Texto de globo Car";
+	mso-style-link:"Texto de globo";
+	font-family:"Segoe UI","sans-serif";}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-AU link="#0563C1" vlink="#954F72">
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=right style='text-align:right'><b><span
+style='font-size:48.0pt;line-height:107%'>Scuba Diving Calculation Assistant</span></b></p>
+
+<p class=MsoNormal align=right style='text-align:right'><b><span
+style='font-size:48.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=right style='text-align:right'><b><span
+style='font-size:48.0pt;line-height:107%'>User Guide</span></b></p>
+
+<span style='font-size:11.0pt;line-height:107%;font-family:"Calibri","sans-serif"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoTocHeading><span lang=EN-US style='font-family:"Times New Roman","serif"'>Table
+of Contents</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoToc1><span
+class=MsoHyperlink><a href="#_Toc514063133"><span style='font-family:"Times New Roman","serif"'>List
+of Figures</span><span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></span></p>
+
+<p class=MsoToc1><a href="#_Toc514063134"><span style='font-family:"Times New Roman","serif"'>Introduction</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc514063135"><span style='font-family:"Times New Roman","serif"'>How
+to use the Scuba Diving Calculation Assistant</span><span style='color:windowtext;
+display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc514063136"><span style='font-family:"Times New Roman","serif"'>Simple
+Calculations</span><span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc514063137"><span style='font-family:"Times New Roman","serif"'>Equivalent
+Air Depth (EAD)</span><span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc514063138"><span style='font-family:"Times New Roman","serif"'>Maximum
+Operating Depth (MOD)</span><span style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc514063139"><span style='font-family:"Times New Roman","serif"'>Standard
+Maximum Operating Depth (SMOD)</span><span style='color:windowtext;display:
+none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc514063140"><span style='font-family:"Times New Roman","serif"'>Fraction
+of Oxygen (Best Mix)</span><span style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc514063141"><span style='font-family:"Times New Roman","serif"'>Partial
+Pressure of Oxygen (PPO<sub>2</sub>)</span><span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>8</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc514063142"><span style='font-family:"Times New Roman","serif"'>Error
+Handling</span><span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>8</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc514063143"><span style='font-family:"Times New Roman","serif"'>Complex
+calculations</span><span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>9</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc514063144"><span style='font-family:"Times New Roman","serif"'>EAD
+table</span><span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>10</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc514063145"><span style='font-family:"Times New Roman","serif"'>PPO2
+table</span><span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>11</span></a></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;font-family:
+"Times New Roman","serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<span style='font-size:11.0pt;line-height:107%;font-family:"Calibri","sans-serif"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h1><a name="_Toc514063133"><span style='font-family:"Times New Roman","serif"'>List
+of Figures</span></a></h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman","serif"'>Figure 1:</span></b><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>
+First snapshot of Simple calculations</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman","serif"'>Figure 2:</span></b><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>
+How to get input through sliders</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman","serif"'>Figure 3:</span></b><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>
+EAD result</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman","serif"'>Figure 4:</span></b><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>
+MOD result</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman","serif"'>Figure 5:</span></b><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>
+SMOD result</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman","serif"'>Figure 6:</span></b><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>
+Best Mix result</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman","serif"'>Figure 7:</span></b><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>
+PPO2 result</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman","serif"'>Figure 8: </span></b><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>Warning
+for Incorrect Best mix</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman","serif"'>Figure 9: </span></b><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>Warning
+for incorrect PPO2</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman","serif"'>Figure 10: </span></b><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>Complex
+calculation</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman","serif"'>Figure 11: </span></b><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>Getting
+inputs for EAD table</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman","serif"'>Figure 12: </span></b><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>Final
+EAD table</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman","serif"'>Figure 13: </span></b><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>PPO2
+table</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman","serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h1><a name="_Toc514063134"><span style='font-family:"Times New Roman","serif"'>Introduction</span></a></h1>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>Scuba
+Diving Calculation Assistant is an GUI application for common dive
+calculations, which could be useful for Scuba diver to dive safely. The aim to
+develop SDCA is to automate simple and complex calculations used by the dive
+industry commonly. The application is divided into two categories: <i>Simple
+calculations and complex calculations</i>.  </span></p>
+
+<p class=MsoNoSpacing style='text-align:justify'><span lang=EN-US
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>Through <i>Simple
+Calculations, </i>User can provide input values and SDCA will display the
+following calculations:</span></p>
+
+<p class=MsoNoSpacing style='text-align:justify'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>EAD (Equivalent
+Air Depth)</span></b><span lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+– To avoid the risk of nitrogen narcosis, it is very useful to know EAD which
+is calculated based upon the gas mixtures containing more than the normal 21%
+of o2.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal;text-autospace:none'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>MOD (Maximum
+Operating Depth)</span></b><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'> – This helps the diver to know the maximum safe
+depth at which it to dive in.</span></p>
+
+<p class=MsoNoSpacing style='text-align:justify'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>BM (Best Mix)</span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'> –
+Best mix of gas is useful to know, using known depth to dive safely.</span></p>
+
+<p class=MsoNoSpacing style='text-align:justify'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>PPO2 (Partial
+pressure of oxygen)</span></b><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'> – partial pressure of oxygen is
+calculated by limiting the mixture to a safe level which is 1.1 ata-1.6 ata.</span></p>
+
+<p class=MsoNoSpacing style='text-align:justify'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>SMOD (Standard
+maximum operating depth) </span></b><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>– This can be calculated by using
+standard PPO2 value 1.4.</span></p>
+
+<p class=MsoNoSpacing style='text-align:justify'><span lang=EN-US
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></p>
+
+<p class=MsoNoSpacing style='text-align:justify'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>Furthermore, through complex
+calculations, two tables will be produced by SDCA</span></p>
+
+<p class=MsoNoSpacing style='text-align:justify'><b><span style='font-size:
+12.0pt;font-family:"Times New Roman","serif"'>EAD (Equivalent air depth) table:</span></b><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'> This will show </span><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>EAD's
+for a start and end percentage of O2 along with start and end depth.</span></p>
+
+<p class=MsoNoSpacing style='text-align:justify'><b><span style='font-size:
+12.0pt;font-family:"Times New Roman","serif"'>Table of partial pressures: </span></b><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>This table will
+use same requirements as of EAD table with exception that when partial pressure
+is above 1.6, it should not be displayed. </span></p>
+
+<p class=MsoNoSpacing style='text-align:justify'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>Besides, <i>Simple
+calculations and complex calculations, </i>there is <b>Help</b> menu that </span><span
+lang=EN-US style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>should
+give instructions for how to use the program with acceptable values along with
+the meaning of the help menu items.</span></p>
+
+<h1><a name="_Toc514063135"><span style='font-family:"Times New Roman","serif"'>How
+to use the Scuba Diving Calculation Assistant</span></a></h1>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>The Scuba Diving
+Calculation Assistant is here to support you with your diving calculations.
+When you open the application, it should look like this:</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=462
+height=270 id="Picture 7" src="src/img/manual_archivos/image001.jpg"></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>Figure
+1: First snapshot of Simple calculations</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>To pick which
+calculation you would like to make, <i>click</i> the ‘<i>Simple Calculations’</i>
+or ‘<i>Complex Calculations’</i> tab (only Simple calculations have been
+implemented yet as a part of Sprint1).</span></p>
+
+<h1><a name="_Toc514063136"><span style='font-family:"Times New Roman","serif"'>Simple
+Calculations</span></a></h1>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>The SDCA can calculate five
+common simple diving calculations. Equivalent Air Depth (EAD), Maximum
+Operating Depth (MOD), Standard Maximum Operating Depth (SMOD), Fraction of
+Oxygen (Best Mix), and Partial Pressure of oxygen (PPO<sub>2</sub>)</span></p>
+
+<h2><a name="_Toc514063137"><span style='font-size:14.0pt;line-height:107%;
+font-family:"Times New Roman","serif"'>Equivalent Air Depth (EAD)</span></a></h2>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>To calculate the
+Equivalent Air Depth, enter the percentage of oxygen and depth by using the
+sliders</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'><img
+width=601 height=362 id="Picture 8" src="manual_archivos/image002.jpg"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>Figure
+2: Getting input for EAD through sliders</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>When user provide input
+values through sliders, press [EAD] tab to know EAD value</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>The EAD is displayed to
+the right of the window in the ‘Result’ box.</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'><img width=601
+height=359 id="Picture 9" src="manual_archivos/image003.jpg"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>Figure
+3:  EAD result</span></p>
+
+<h2><a name="_Toc514063138"><span style='font-size:14.0pt;line-height:107%;
+font-family:"Times New Roman","serif"'>Maximum Operating Depth (MOD)</span></a></h2>
+
+<p class=MsoNoSpacing style='text-align:justify'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>To calculate the Maximum Operating
+Depth, <i>click </i>the ‘<i>MOD’</i> button to the left of the window.</span></p>
+
+<p class=MsoNoSpacing style='text-align:justify'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>Enter the Partial Pressure of oxygen and
+the percentage of oxygen in the mix</span></p>
+
+<p class=MsoNoSpacing style='text-align:justify'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>The MOD is displayed to the right of the
+window in the ‘Result’ box in metres. </span></p>
+
+<p class=MsoNoSpacing style='text-align:justify'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>&nbsp;</span></p>
+
+<p class=MsoNoSpacing style='text-align:justify'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'><img width=601 height=335 id="Picture 10"
+src="manual_archivos/image004.jpg"></span></p>
+
+<p class=MsoNoSpacing style='text-align:justify'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>Figure
+4:  MOD result</span></p>
+
+<h2><a name="_Toc514063139"><span style='font-size:14.0pt;line-height:107%;
+font-family:"Times New Roman","serif"'>Standard Maximum Operating Depth (SMOD)</span></a></h2>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>To calculate the Standard
+Maximum Operating Depth, <i>click </i>the ‘S<i>MOD’</i> button to the left of
+the window. In SMOD the PPO<sub>2</sub> is fixed to 1.4. Enter the percentage
+of oxygen, then click on “SMOD”</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>The SMOD is displayed
+to the right of the window in the ‘Result’ box.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'><img
+width=530 height=297 id="Picture 15" src="manual_archivos/image005.jpg"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>Figure
+5: SMOD result</span></p>
+
+<h2><a name="_Toc514063140"><span style='font-size:14.0pt;line-height:107%;
+font-family:"Times New Roman","serif"'>Fraction of Oxygen (Best Mix)</span></a></h2>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>To calculate the Best
+Mix, <i>click </i>the ‘<i>Best Mix’</i> button to the left of the window.</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>Enter the ­­­­­partial
+pressure of oxygen and the depth, then click “Best Mix”. The Best Mix is
+displayed to the right of the window in the ‘Result’ box.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'><img
+width=574 height=330 id="Picture 16" src="manual_archivos/image006.jpg"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>Figure
+6: Best Mix result</span></p>
+
+<h2><a name="_Toc514063141"><span style='font-size:14.0pt;line-height:107%;
+font-family:"Times New Roman","serif"'>Partial Pressure of Oxygen (PPO<sub>2</sub>)</span></a></h2>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>To calculate the
+Partial Pressure of Oxygen, <i>click </i>the ‘PPO<sub>2</sub><i>’</i> button to
+the left of the window.</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>Enter the input values
+from the sliders to calculate PPO2, the PPO<sub>2</sub> is displayed to the
+right of the window in the ‘Result’ box.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'><img
+width=601 height=366 id="Picture 17" src="manual_archivos/image007.jpg"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>Figure
+7: PPO2 result</span></p>
+
+<h1><a name="_Toc514063142"><span style='font-family:"Times New Roman","serif"'>Error
+Handling</span></a></h1>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>The </span><span
+lang=EN-US style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>Scuba
+Diving Calculation Assistant</span><span lang=EN-US style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'> </span><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>application
+has been designed in such a way that if user provide invalid values which are
+not in the acceptable range, program will display errors/warnings through GUI
+to inform users about the mistakes and give them a chance to correct the values
+so that application produce correct calculations. </span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>There could be many
+instances where results could be invalid but following are examples of some
+screenshots when values entered by user are not valid:</span></p>
+
+<p class=MsoListParagraph style='text-align:justify;text-indent:-18.0pt'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>For
+Best mix, Oxygen value must be between 22% and 50%, when this value is out of
+range, warning will be displayed to user as shown below:</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'><img
+width=601 height=361 id="Picture 18" src="manual_archivos/image008.jpg"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>Figure
+8: Warning for Incorrect Best mix</span></p>
+
+<p class=MsoListParagraph style='text-indent:-18.0pt'><span style='font-size:
+12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>When
+PPO2 exceeds recommended range of 1.1-1.6, warning will be displayed as
+following:</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'><img
+width=601 height=357 id="Picture 19" src="manual_archivos/image009.jpg"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>Figure
+9: Warning for incorrect PPO2</span></p>
+
+<h1><a name="_Toc514063143"><span style='font-family:"Times New Roman","serif"'>Complex
+calculations</span></a></h1>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>Complex calculations
+component in SDCA is used for producing two tables: EAD table and table of
+partial pressures. </span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>To calculate complex
+calculations, click on the <i>complex calculations tab</i> at the top left-hand
+side. </span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'><img
+width=513 height=319 id="Picture 2" src="manual_archivos/image010.jpg"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>Figure
+10: Complex calculation</span></p>
+
+<h2><a name="_Toc514063144"><span style='font-size:14.0pt;line-height:107%;
+font-family:"Times New Roman","serif"'>EAD table</span></a></h2>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>For this, user needs to
+input values for oxygen and depth where, oxygen values must be between 18%-50%
+or any combination between these values whereas depth values should only range
+between 3m to 70m. Any value out of these range is not acceptable by the
+system.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'><img
+width=513 height=364 id="Picture 3" src="manual_archivos/image011.jpg"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>Figure
+11: Getting inputs for EAD table</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>After providing inputs
+for EAD table, click on <i>generate EAD table tab. </i>Table of EAD’s will be
+generated with increment of 1 in oxygen values and increment of 3 in depth
+values. This is shown in the following snapshot:</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'><img
+width=551 height=300 id="Picture 4" src="manual_archivos/image012.jpg"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>Figure
+12: Final EAD table</span></p>
+
+<h2><a name="_Toc514063145"><span style='font-size:14.0pt;line-height:107%;
+font-family:"Times New Roman","serif"'>PPO2 table</span></a></h2>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>For PPO2 table, input
+requirements are same as of EAD table mentioned above, but the partial pressure
+above 1.6 will not be displayed. User will give input to the system, click on <i>generate
+PPO2 table tab</i>, PPO2 table will be generated as shown in the snapshot
+below:</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman","serif"'>Blank boxes in the
+table represent value of PPO2 is more than 1.6</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'><img
+width=552 height=318 id="Picture 6" src="manual_archivos/image013.jpg"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman","serif"'>Figure
+13: PPO2 table</span></p>
+
+</div>
+
+</body>
+
+</html>

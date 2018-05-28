@@ -5,7 +5,18 @@
  */
 package view;
 
+import chrriis.dj.nativeswing.swtimpl.NativeInterface;
+import chrriis.dj.nativeswing.swtimpl.components.JWebBrowser;
 import control.Controller;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import javax.swing.JDialog;
+import javax.swing.JEditorPane;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import model.Cylinder;
@@ -18,10 +29,14 @@ import model.SimpleCalculation;
 public class ScubaDivingView extends javax.swing.JFrame {
 
     Controller controller;
+    //JFrame frameHelp;
+    JPanel panelHelp;
+    JEditorPane help;
+    private final JWebBrowser fileBrowser = new JWebBrowser(JWebBrowser.destroyOnFinalization());
 
     /**
      * Creates new form ScubaDivingView
-     * 
+     *
      * @param controller controller of the program
      */
     public ScubaDivingView(Controller controller) {
@@ -54,6 +69,14 @@ public class ScubaDivingView extends javax.swing.JFrame {
         smodButton = new javax.swing.JButton();
         ppo2Button = new javax.swing.JButton();
         modButton = new javax.swing.JButton();
+        helpInputs16 = new HelpPanel();
+        helpInputs17 = new HelpPanel();
+        helpInputs18 = new HelpPanel();
+        helpInputs19 = new HelpPanel();
+        helpInputs20 = new HelpPanel();
+        helpInputs21 = new HelpPanel();
+        helpInputs22 = new HelpPanel();
+        helpInputs23 = new HelpPanel();
         jPanel3 = new javax.swing.JPanel();
         label3 = new java.awt.Label();
         ppo2 = new javax.swing.JComboBox();
@@ -65,13 +88,45 @@ public class ScubaDivingView extends javax.swing.JFrame {
         depth = new java.awt.TextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        helpInputs = new HelpPanel();
+        helpInputs1 = new HelpPanel();
+        helpInputs2 = new HelpPanel();
+        helpInputs3 = new HelpPanel();
+        helpInputs4 = new HelpPanel();
+        helpInputs5 = new HelpPanel();
+        helpInputs6 = new HelpPanel();
+        helpInputs7 = new HelpPanel();
         jPanel1 = new javax.swing.JPanel();
         simpleResult = new javax.swing.JLabel();
+        helpInputs8 = new HelpPanel();
+        helpInputs9 = new HelpPanel();
+        helpInputs10 = new HelpPanel();
+        helpInputs11 = new HelpPanel();
+        helpInputs12 = new HelpPanel();
+        helpInputs13 = new HelpPanel();
+        helpInputs14 = new HelpPanel();
+        helpInputs15 = new HelpPanel();
         cylinderPanel1 = new view.CylinderPanel();
+        helpInputs24 = new HelpPanel();
+        helpInputs25 = new HelpPanel();
+        helpInputs26 = new HelpPanel();
+        helpInputs27 = new HelpPanel();
+        helpInputs28 = new HelpPanel();
+        helpInputs29 = new HelpPanel();
+        helpInputs30 = new HelpPanel();
+        helpInputs31 = new HelpPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        helpInputs32 = new HelpPanel();
+        helpInputs33 = new HelpPanel();
+        helpInputs34 = new HelpPanel();
+        helpInputs35 = new HelpPanel();
+        helpInputs36 = new HelpPanel();
+        helpInputs37 = new HelpPanel();
+        helpInputs38 = new HelpPanel();
+        helpInputs39 = new HelpPanel();
         resultComplexCalculation = new javax.swing.JScrollPane();
         tableComplexCalculations = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
@@ -93,6 +148,23 @@ public class ScubaDivingView extends javax.swing.JFrame {
         sliderDepthStart = new javax.swing.JSlider();
         depthStart = new java.awt.TextField();
         jLabel8 = new javax.swing.JLabel();
+        helpInputs40 = new HelpPanel();
+        helpInputs41 = new HelpPanel();
+        helpInputs42 = new HelpPanel();
+        helpInputs43 = new HelpPanel();
+        helpInputs44 = new HelpPanel();
+        helpInputs45 = new HelpPanel();
+        helpInputs46 = new HelpPanel();
+        helpInputs47 = new HelpPanel();
+        helpInputs48 = new HelpPanel();
+        helpInputs49 = new HelpPanel();
+        helpInputs50 = new HelpPanel();
+        helpInputs51 = new HelpPanel();
+        helpInputs52 = new HelpPanel();
+        helpInputs53 = new HelpPanel();
+        helpInputs54 = new HelpPanel();
+        helpInputs55 = new HelpPanel();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -133,6 +205,220 @@ public class ScubaDivingView extends javax.swing.JFrame {
             }
         });
 
+        helpInputs16.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs16MouseEntered(evt);
+            }
+        });
+
+        helpInputs17.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs17MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs17Layout = new javax.swing.GroupLayout(helpInputs17);
+        helpInputs17.setLayout(helpInputs17Layout);
+        helpInputs17Layout.setHorizontalGroup(
+            helpInputs17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs17Layout.setVerticalGroup(
+            helpInputs17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        helpInputs18.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs18MouseEntered(evt);
+            }
+        });
+
+        helpInputs19.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs19MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs19Layout = new javax.swing.GroupLayout(helpInputs19);
+        helpInputs19.setLayout(helpInputs19Layout);
+        helpInputs19Layout.setHorizontalGroup(
+            helpInputs19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs19Layout.setVerticalGroup(
+            helpInputs19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout helpInputs18Layout = new javax.swing.GroupLayout(helpInputs18);
+        helpInputs18.setLayout(helpInputs18Layout);
+        helpInputs18Layout.setHorizontalGroup(
+            helpInputs18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs18Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs18Layout.setVerticalGroup(
+            helpInputs18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs18Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        helpInputs20.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs20MouseEntered(evt);
+            }
+        });
+
+        helpInputs21.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs21.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs21MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs21Layout = new javax.swing.GroupLayout(helpInputs21);
+        helpInputs21.setLayout(helpInputs21Layout);
+        helpInputs21Layout.setHorizontalGroup(
+            helpInputs21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs21Layout.setVerticalGroup(
+            helpInputs21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        helpInputs22.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs22.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs22MouseEntered(evt);
+            }
+        });
+
+        helpInputs23.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs23.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs23MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs23Layout = new javax.swing.GroupLayout(helpInputs23);
+        helpInputs23.setLayout(helpInputs23Layout);
+        helpInputs23Layout.setHorizontalGroup(
+            helpInputs23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs23Layout.setVerticalGroup(
+            helpInputs23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout helpInputs22Layout = new javax.swing.GroupLayout(helpInputs22);
+        helpInputs22.setLayout(helpInputs22Layout);
+        helpInputs22Layout.setHorizontalGroup(
+            helpInputs22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs22Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs22Layout.setVerticalGroup(
+            helpInputs22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs22Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout helpInputs20Layout = new javax.swing.GroupLayout(helpInputs20);
+        helpInputs20.setLayout(helpInputs20Layout);
+        helpInputs20Layout.setHorizontalGroup(
+            helpInputs20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs20Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs20Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs20Layout.setVerticalGroup(
+            helpInputs20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs20Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs20Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout helpInputs16Layout = new javax.swing.GroupLayout(helpInputs16);
+        helpInputs16.setLayout(helpInputs16Layout);
+        helpInputs16Layout.setHorizontalGroup(
+            helpInputs16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs16Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs16Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs16Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs16Layout.setVerticalGroup(
+            helpInputs16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs16Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs16Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs16Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -148,7 +434,8 @@ public class ScubaDivingView extends javax.swing.JFrame {
                 .addComponent(ppo2Button)
                 .addGap(18, 18, 18)
                 .addComponent(smodButton)
-                .addContainerGap(435, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(helpInputs16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,6 +448,9 @@ public class ScubaDivingView extends javax.swing.JFrame {
                     .addComponent(modButton)
                     .addComponent(eadButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(helpInputs16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Inputs"));
@@ -217,6 +507,220 @@ public class ScubaDivingView extends javax.swing.JFrame {
 
         jLabel2.setText("meters");
 
+        helpInputs.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputsMouseEntered(evt);
+            }
+        });
+
+        helpInputs1.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs1MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs1Layout = new javax.swing.GroupLayout(helpInputs1);
+        helpInputs1.setLayout(helpInputs1Layout);
+        helpInputs1Layout.setHorizontalGroup(
+            helpInputs1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs1Layout.setVerticalGroup(
+            helpInputs1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        helpInputs2.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs2MouseEntered(evt);
+            }
+        });
+
+        helpInputs3.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs3MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs3Layout = new javax.swing.GroupLayout(helpInputs3);
+        helpInputs3.setLayout(helpInputs3Layout);
+        helpInputs3Layout.setHorizontalGroup(
+            helpInputs3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs3Layout.setVerticalGroup(
+            helpInputs3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout helpInputs2Layout = new javax.swing.GroupLayout(helpInputs2);
+        helpInputs2.setLayout(helpInputs2Layout);
+        helpInputs2Layout.setHorizontalGroup(
+            helpInputs2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs2Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs2Layout.setVerticalGroup(
+            helpInputs2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs2Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        helpInputs4.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs4MouseEntered(evt);
+            }
+        });
+
+        helpInputs5.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs5MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs5Layout = new javax.swing.GroupLayout(helpInputs5);
+        helpInputs5.setLayout(helpInputs5Layout);
+        helpInputs5Layout.setHorizontalGroup(
+            helpInputs5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs5Layout.setVerticalGroup(
+            helpInputs5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        helpInputs6.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs6MouseEntered(evt);
+            }
+        });
+
+        helpInputs7.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs7MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs7Layout = new javax.swing.GroupLayout(helpInputs7);
+        helpInputs7.setLayout(helpInputs7Layout);
+        helpInputs7Layout.setHorizontalGroup(
+            helpInputs7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs7Layout.setVerticalGroup(
+            helpInputs7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout helpInputs6Layout = new javax.swing.GroupLayout(helpInputs6);
+        helpInputs6.setLayout(helpInputs6Layout);
+        helpInputs6Layout.setHorizontalGroup(
+            helpInputs6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs6Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs6Layout.setVerticalGroup(
+            helpInputs6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs6Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout helpInputs4Layout = new javax.swing.GroupLayout(helpInputs4);
+        helpInputs4.setLayout(helpInputs4Layout);
+        helpInputs4Layout.setHorizontalGroup(
+            helpInputs4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs4Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs4Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs4Layout.setVerticalGroup(
+            helpInputs4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs4Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs4Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout helpInputsLayout = new javax.swing.GroupLayout(helpInputs);
+        helpInputs.setLayout(helpInputsLayout);
+        helpInputsLayout.setHorizontalGroup(
+            helpInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputsLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputsLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputsLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputsLayout.setVerticalGroup(
+            helpInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputsLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputsLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputsLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -233,25 +737,33 @@ public class ScubaDivingView extends javax.swing.JFrame {
                     .addComponent(sliderOxygen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(sliderDepth, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Oxygen, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(depth, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(jLabel2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Oxygen, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(depth, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(jLabel1))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(jLabel2)))
+                        .addContainerGap(20, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(helpInputs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ppo2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ppo2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(helpInputs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
@@ -278,34 +790,470 @@ public class ScubaDivingView extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Result"));
 
+        helpInputs8.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs8MouseEntered(evt);
+            }
+        });
+
+        helpInputs9.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs9MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs9Layout = new javax.swing.GroupLayout(helpInputs9);
+        helpInputs9.setLayout(helpInputs9Layout);
+        helpInputs9Layout.setHorizontalGroup(
+            helpInputs9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs9Layout.setVerticalGroup(
+            helpInputs9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        helpInputs10.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs10MouseEntered(evt);
+            }
+        });
+
+        helpInputs11.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs11MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs11Layout = new javax.swing.GroupLayout(helpInputs11);
+        helpInputs11.setLayout(helpInputs11Layout);
+        helpInputs11Layout.setHorizontalGroup(
+            helpInputs11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs11Layout.setVerticalGroup(
+            helpInputs11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout helpInputs10Layout = new javax.swing.GroupLayout(helpInputs10);
+        helpInputs10.setLayout(helpInputs10Layout);
+        helpInputs10Layout.setHorizontalGroup(
+            helpInputs10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs10Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs10Layout.setVerticalGroup(
+            helpInputs10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs10Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        helpInputs12.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs12MouseEntered(evt);
+            }
+        });
+
+        helpInputs13.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs13MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs13Layout = new javax.swing.GroupLayout(helpInputs13);
+        helpInputs13.setLayout(helpInputs13Layout);
+        helpInputs13Layout.setHorizontalGroup(
+            helpInputs13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs13Layout.setVerticalGroup(
+            helpInputs13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        helpInputs14.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs14MouseEntered(evt);
+            }
+        });
+
+        helpInputs15.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs15MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs15Layout = new javax.swing.GroupLayout(helpInputs15);
+        helpInputs15.setLayout(helpInputs15Layout);
+        helpInputs15Layout.setHorizontalGroup(
+            helpInputs15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs15Layout.setVerticalGroup(
+            helpInputs15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout helpInputs14Layout = new javax.swing.GroupLayout(helpInputs14);
+        helpInputs14.setLayout(helpInputs14Layout);
+        helpInputs14Layout.setHorizontalGroup(
+            helpInputs14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs14Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs14Layout.setVerticalGroup(
+            helpInputs14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs14Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout helpInputs12Layout = new javax.swing.GroupLayout(helpInputs12);
+        helpInputs12.setLayout(helpInputs12Layout);
+        helpInputs12Layout.setHorizontalGroup(
+            helpInputs12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs12Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs12Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs12Layout.setVerticalGroup(
+            helpInputs12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs12Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs12Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout helpInputs8Layout = new javax.swing.GroupLayout(helpInputs8);
+        helpInputs8.setLayout(helpInputs8Layout);
+        helpInputs8Layout.setHorizontalGroup(
+            helpInputs8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs8Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs8Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs8Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs8Layout.setVerticalGroup(
+            helpInputs8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs8Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs8Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs8Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(simpleResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(simpleResult, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(helpInputs8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addComponent(helpInputs8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
                 .addComponent(simpleResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         cylinderPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Oxygen - Nitrogen Cylinder"));
 
+        helpInputs24.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs24.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs24MouseEntered(evt);
+            }
+        });
+
+        helpInputs25.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs25.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs25MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs25Layout = new javax.swing.GroupLayout(helpInputs25);
+        helpInputs25.setLayout(helpInputs25Layout);
+        helpInputs25Layout.setHorizontalGroup(
+            helpInputs25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs25Layout.setVerticalGroup(
+            helpInputs25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        helpInputs26.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs26.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs26MouseEntered(evt);
+            }
+        });
+
+        helpInputs27.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs27.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs27MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs27Layout = new javax.swing.GroupLayout(helpInputs27);
+        helpInputs27.setLayout(helpInputs27Layout);
+        helpInputs27Layout.setHorizontalGroup(
+            helpInputs27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs27Layout.setVerticalGroup(
+            helpInputs27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout helpInputs26Layout = new javax.swing.GroupLayout(helpInputs26);
+        helpInputs26.setLayout(helpInputs26Layout);
+        helpInputs26Layout.setHorizontalGroup(
+            helpInputs26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs26Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs26Layout.setVerticalGroup(
+            helpInputs26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs26Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        helpInputs28.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs28.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs28MouseEntered(evt);
+            }
+        });
+
+        helpInputs29.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs29.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs29MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs29Layout = new javax.swing.GroupLayout(helpInputs29);
+        helpInputs29.setLayout(helpInputs29Layout);
+        helpInputs29Layout.setHorizontalGroup(
+            helpInputs29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs29Layout.setVerticalGroup(
+            helpInputs29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        helpInputs30.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs30.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs30MouseEntered(evt);
+            }
+        });
+
+        helpInputs31.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs31.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs31MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs31Layout = new javax.swing.GroupLayout(helpInputs31);
+        helpInputs31.setLayout(helpInputs31Layout);
+        helpInputs31Layout.setHorizontalGroup(
+            helpInputs31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs31Layout.setVerticalGroup(
+            helpInputs31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout helpInputs30Layout = new javax.swing.GroupLayout(helpInputs30);
+        helpInputs30.setLayout(helpInputs30Layout);
+        helpInputs30Layout.setHorizontalGroup(
+            helpInputs30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs30Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs30Layout.setVerticalGroup(
+            helpInputs30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs30Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout helpInputs28Layout = new javax.swing.GroupLayout(helpInputs28);
+        helpInputs28.setLayout(helpInputs28Layout);
+        helpInputs28Layout.setHorizontalGroup(
+            helpInputs28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs28Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs28Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs28Layout.setVerticalGroup(
+            helpInputs28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs28Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs28Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout helpInputs24Layout = new javax.swing.GroupLayout(helpInputs24);
+        helpInputs24.setLayout(helpInputs24Layout);
+        helpInputs24Layout.setHorizontalGroup(
+            helpInputs24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs24Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs24Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs24Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs24Layout.setVerticalGroup(
+            helpInputs24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs24Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs24Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs24Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
         javax.swing.GroupLayout cylinderPanel1Layout = new javax.swing.GroupLayout(cylinderPanel1);
         cylinderPanel1.setLayout(cylinderPanel1Layout);
         cylinderPanel1Layout.setHorizontalGroup(
             cylinderPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(cylinderPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(helpInputs24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         cylinderPanel1Layout.setVerticalGroup(
             cylinderPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 296, Short.MAX_VALUE)
+            .addGroup(cylinderPanel1Layout.createSequentialGroup()
+                .addComponent(helpInputs24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 292, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -332,9 +1280,9 @@ public class ScubaDivingView extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(cylinderPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Simple Calculations", jPanel4);
@@ -355,6 +1303,220 @@ public class ScubaDivingView extends javax.swing.JFrame {
             }
         });
 
+        helpInputs32.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs32.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs32MouseEntered(evt);
+            }
+        });
+
+        helpInputs33.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs33.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs33MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs33Layout = new javax.swing.GroupLayout(helpInputs33);
+        helpInputs33.setLayout(helpInputs33Layout);
+        helpInputs33Layout.setHorizontalGroup(
+            helpInputs33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs33Layout.setVerticalGroup(
+            helpInputs33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        helpInputs34.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs34.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs34MouseEntered(evt);
+            }
+        });
+
+        helpInputs35.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs35.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs35MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs35Layout = new javax.swing.GroupLayout(helpInputs35);
+        helpInputs35.setLayout(helpInputs35Layout);
+        helpInputs35Layout.setHorizontalGroup(
+            helpInputs35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs35Layout.setVerticalGroup(
+            helpInputs35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout helpInputs34Layout = new javax.swing.GroupLayout(helpInputs34);
+        helpInputs34.setLayout(helpInputs34Layout);
+        helpInputs34Layout.setHorizontalGroup(
+            helpInputs34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs34Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs34Layout.setVerticalGroup(
+            helpInputs34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs34Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        helpInputs36.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs36.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs36MouseEntered(evt);
+            }
+        });
+
+        helpInputs37.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs37.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs37MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs37Layout = new javax.swing.GroupLayout(helpInputs37);
+        helpInputs37.setLayout(helpInputs37Layout);
+        helpInputs37Layout.setHorizontalGroup(
+            helpInputs37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs37Layout.setVerticalGroup(
+            helpInputs37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        helpInputs38.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs38.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs38MouseEntered(evt);
+            }
+        });
+
+        helpInputs39.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs39.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs39MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs39Layout = new javax.swing.GroupLayout(helpInputs39);
+        helpInputs39.setLayout(helpInputs39Layout);
+        helpInputs39Layout.setHorizontalGroup(
+            helpInputs39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs39Layout.setVerticalGroup(
+            helpInputs39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout helpInputs38Layout = new javax.swing.GroupLayout(helpInputs38);
+        helpInputs38.setLayout(helpInputs38Layout);
+        helpInputs38Layout.setHorizontalGroup(
+            helpInputs38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs38Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs38Layout.setVerticalGroup(
+            helpInputs38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs38Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout helpInputs36Layout = new javax.swing.GroupLayout(helpInputs36);
+        helpInputs36.setLayout(helpInputs36Layout);
+        helpInputs36Layout.setHorizontalGroup(
+            helpInputs36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs36Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs36Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs36Layout.setVerticalGroup(
+            helpInputs36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs36Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs36Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout helpInputs32Layout = new javax.swing.GroupLayout(helpInputs32);
+        helpInputs32.setLayout(helpInputs32Layout);
+        helpInputs32Layout.setHorizontalGroup(
+            helpInputs32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs32Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs32Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs32Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs32Layout.setVerticalGroup(
+            helpInputs32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs32Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs32Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs32Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -364,7 +1526,8 @@ public class ScubaDivingView extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(helpInputs32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -374,6 +1537,9 @@ public class ScubaDivingView extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(jButton2))
                 .addContainerGap())
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addComponent(helpInputs32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         resultComplexCalculation.setBorder(javax.swing.BorderFactory.createTitledBorder("Results"));
@@ -459,7 +1625,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
                         .addComponent(OxygenEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(2, 2, 2)
                         .addComponent(jLabel7)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(123, Short.MAX_VALUE))
         );
         inputsComplexCalculationsLayout.setVerticalGroup(
             inputsComplexCalculationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -581,6 +1747,220 @@ public class ScubaDivingView extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        helpInputs40.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs40.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs40MouseEntered(evt);
+            }
+        });
+
+        helpInputs41.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs41.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs41MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs41Layout = new javax.swing.GroupLayout(helpInputs41);
+        helpInputs41.setLayout(helpInputs41Layout);
+        helpInputs41Layout.setHorizontalGroup(
+            helpInputs41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs41Layout.setVerticalGroup(
+            helpInputs41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        helpInputs42.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs42.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs42MouseEntered(evt);
+            }
+        });
+
+        helpInputs43.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs43.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs43MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs43Layout = new javax.swing.GroupLayout(helpInputs43);
+        helpInputs43.setLayout(helpInputs43Layout);
+        helpInputs43Layout.setHorizontalGroup(
+            helpInputs43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs43Layout.setVerticalGroup(
+            helpInputs43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout helpInputs42Layout = new javax.swing.GroupLayout(helpInputs42);
+        helpInputs42.setLayout(helpInputs42Layout);
+        helpInputs42Layout.setHorizontalGroup(
+            helpInputs42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs42Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs42Layout.setVerticalGroup(
+            helpInputs42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs42Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        helpInputs44.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs44.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs44MouseEntered(evt);
+            }
+        });
+
+        helpInputs45.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs45.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs45MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs45Layout = new javax.swing.GroupLayout(helpInputs45);
+        helpInputs45.setLayout(helpInputs45Layout);
+        helpInputs45Layout.setHorizontalGroup(
+            helpInputs45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs45Layout.setVerticalGroup(
+            helpInputs45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        helpInputs46.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs46.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs46MouseEntered(evt);
+            }
+        });
+
+        helpInputs47.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs47.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs47MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs47Layout = new javax.swing.GroupLayout(helpInputs47);
+        helpInputs47.setLayout(helpInputs47Layout);
+        helpInputs47Layout.setHorizontalGroup(
+            helpInputs47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs47Layout.setVerticalGroup(
+            helpInputs47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout helpInputs46Layout = new javax.swing.GroupLayout(helpInputs46);
+        helpInputs46.setLayout(helpInputs46Layout);
+        helpInputs46Layout.setHorizontalGroup(
+            helpInputs46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs46Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs46Layout.setVerticalGroup(
+            helpInputs46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs46Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout helpInputs44Layout = new javax.swing.GroupLayout(helpInputs44);
+        helpInputs44.setLayout(helpInputs44Layout);
+        helpInputs44Layout.setHorizontalGroup(
+            helpInputs44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs44Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs44Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs46, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs44Layout.setVerticalGroup(
+            helpInputs44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs44Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs44Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs46, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout helpInputs40Layout = new javax.swing.GroupLayout(helpInputs40);
+        helpInputs40.setLayout(helpInputs40Layout);
+        helpInputs40Layout.setHorizontalGroup(
+            helpInputs40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs40Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs40Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs40Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs40Layout.setVerticalGroup(
+            helpInputs40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs40Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs40Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs40Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -588,17 +1968,234 @@ public class ScubaDivingView extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(inputsComplexCalculations, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(inputsComplexCalculations1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(helpInputs40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(inputsComplexCalculations1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputsComplexCalculations, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(inputsComplexCalculations1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(inputsComplexCalculations, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(helpInputs40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 11, Short.MAX_VALUE))
+        );
+
+        helpInputs48.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs48.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs48MouseEntered(evt);
+            }
+        });
+
+        helpInputs49.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs49.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs49MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs49Layout = new javax.swing.GroupLayout(helpInputs49);
+        helpInputs49.setLayout(helpInputs49Layout);
+        helpInputs49Layout.setHorizontalGroup(
+            helpInputs49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs49Layout.setVerticalGroup(
+            helpInputs49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        helpInputs50.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs50.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs50MouseEntered(evt);
+            }
+        });
+
+        helpInputs51.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs51.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs51MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs51Layout = new javax.swing.GroupLayout(helpInputs51);
+        helpInputs51.setLayout(helpInputs51Layout);
+        helpInputs51Layout.setHorizontalGroup(
+            helpInputs51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs51Layout.setVerticalGroup(
+            helpInputs51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout helpInputs50Layout = new javax.swing.GroupLayout(helpInputs50);
+        helpInputs50.setLayout(helpInputs50Layout);
+        helpInputs50Layout.setHorizontalGroup(
+            helpInputs50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs50Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs51, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs50Layout.setVerticalGroup(
+            helpInputs50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs50Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs51, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        helpInputs52.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs52.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs52MouseEntered(evt);
+            }
+        });
+
+        helpInputs53.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs53.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs53MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs53Layout = new javax.swing.GroupLayout(helpInputs53);
+        helpInputs53.setLayout(helpInputs53Layout);
+        helpInputs53Layout.setHorizontalGroup(
+            helpInputs53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs53Layout.setVerticalGroup(
+            helpInputs53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        helpInputs54.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs54.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs54MouseEntered(evt);
+            }
+        });
+
+        helpInputs55.setPreferredSize(new java.awt.Dimension(12, 12));
+        helpInputs55.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                helpInputs55MouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout helpInputs55Layout = new javax.swing.GroupLayout(helpInputs55);
+        helpInputs55.setLayout(helpInputs55Layout);
+        helpInputs55Layout.setHorizontalGroup(
+            helpInputs55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        helpInputs55Layout.setVerticalGroup(
+            helpInputs55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout helpInputs54Layout = new javax.swing.GroupLayout(helpInputs54);
+        helpInputs54.setLayout(helpInputs54Layout);
+        helpInputs54Layout.setHorizontalGroup(
+            helpInputs54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs54Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs54Layout.setVerticalGroup(
+            helpInputs54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs54Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout helpInputs52Layout = new javax.swing.GroupLayout(helpInputs52);
+        helpInputs52.setLayout(helpInputs52Layout);
+        helpInputs52Layout.setHorizontalGroup(
+            helpInputs52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs52Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs52Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs54, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs52Layout.setVerticalGroup(
+            helpInputs52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs52Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs52Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs54, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout helpInputs48Layout = new javax.swing.GroupLayout(helpInputs48);
+        helpInputs48.setLayout(helpInputs48Layout);
+        helpInputs48Layout.setHorizontalGroup(
+            helpInputs48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs48Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs49, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs48Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs50, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs48Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        helpInputs48Layout.setVerticalGroup(
+            helpInputs48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(helpInputs48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs48Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs49, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs48Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs50, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(helpInputs48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(helpInputs48Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(helpInputs52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -606,11 +2203,15 @@ public class ScubaDivingView extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(resultComplexCalculation, javax.swing.GroupLayout.PREFERRED_SIZE, 812, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 65, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(resultComplexCalculation)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(helpInputs48, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -619,28 +2220,47 @@ public class ScubaDivingView extends javax.swing.JFrame {
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(resultComplexCalculation, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(resultComplexCalculation, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(helpInputs48, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         jTabbedPane1.addTab("Complex Calculations", jPanel5);
+
+        jButton3.setText("Help");
+        jButton3.setMargin(new java.awt.Insets(2, 0, 2, 0));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 882, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton3)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 635, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
@@ -658,6 +2278,8 @@ public class ScubaDivingView extends javax.swing.JFrame {
     private void sliderOxygenStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderOxygenStateChanged
         controller.setOxygen(sliderOxygen.getValue());
         Oxygen.setText(String.valueOf(sliderOxygen.getValue()));
+        cylinderPanel1.getCylinder().setWidthCylinder(sliderOxygen.getValue());
+        cylinderPanel1.repaint();
     }//GEN-LAST:event_sliderOxygenStateChanged
 
     private void eadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eadButtonActionPerformed
@@ -710,12 +2332,285 @@ public class ScubaDivingView extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         controller.generateEADTable();
-        // jScrollPane2.set
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         controller.generatePPO2Table();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void helpInputsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputsMouseEntered
+        JOptionPane.showMessageDialog(this, "Eggs are not supposed to be green.", "Help", 1);
+        //JOptionPane.showInputDialog(this, "Eggs are not supposed to be green.");
+        //JOptionPane.showInternalMessageDialog(this, "Eggs are not supposed to be green.");
+
+    }//GEN-LAST:event_helpInputsMouseEntered
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        //frameHelp = new JFrame();
+        NativeInterface.open();
+        final JDialog frame = new JDialog(this, "HELP", true);
+
+        panelHelp = new JPanel();
+        //frameHelp.add(panelHelp);
+
+        fileBrowser.setBarsVisible(false);
+        fileBrowser.setStatusBarVisible(false);
+        //fileRenderPanel.add(fileBrowser, BorderLayout.CENTER);
+        frame.getContentPane().add(fileBrowser, BorderLayout.CENTER);
+
+        //System.out.println("file://" + this.getClass().getResource("/img/manual.html").getFile());
+
+        System.out.println(fileBrowser.navigate("file://" + this.getClass().getResource("/img/Final-user-manual.pdf").getFile()));
+
+        help = new JEditorPane();
+        help.setContentType("text/html");
+        String data = "<IMG SRC='file://../img/help_icon.png' width='24' height='24'>";
+        StringBuilder contentBuilder = new StringBuilder();
+        try (BufferedReader in = new BufferedReader(new FileReader("src/img/manual.html"))) {
+            String str;
+            while ((str = in.readLine()) != null) {
+                contentBuilder.append(str);
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        //frameHelp.setPreferredSize(new Dimension(600, 600));
+        JScrollPane jsp = new JScrollPane(help);
+        //panelHelp.setPreferredSize(new Dimension(380, 280));
+        //frameHelp.getContentPane().add(jsp);
+        //panelHelp.add(jsp);
+        help.getDocument().putProperty("IgnoreCharsetDirective", Boolean.TRUE);
+        //help.setText(contentBuilder.toString());
+        help.setText(data);
+        //jEditorPane1.setText(data);
+        frame.setPreferredSize(new Dimension(1000, 600));
+        //frame.getContentPane().add(jsp);
+        frame.pack();
+        frame.setVisible(true);
+        ///this.add(fileRenderPanel);
+        //frameHelp.pack();
+        //frameHelp.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void helpInputs1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs1MouseEntered
+
+    private void helpInputs3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs3MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs3MouseEntered
+
+    private void helpInputs2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs2MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs2MouseEntered
+
+    private void helpInputs5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs5MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs5MouseEntered
+
+    private void helpInputs7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs7MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs7MouseEntered
+
+    private void helpInputs6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs6MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs6MouseEntered
+
+    private void helpInputs4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs4MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs4MouseEntered
+
+    private void helpInputs9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs9MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs9MouseEntered
+
+    private void helpInputs11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs11MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs11MouseEntered
+
+    private void helpInputs10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs10MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs10MouseEntered
+
+    private void helpInputs13MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs13MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs13MouseEntered
+
+    private void helpInputs15MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs15MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs15MouseEntered
+
+    private void helpInputs14MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs14MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs14MouseEntered
+
+    private void helpInputs12MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs12MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs12MouseEntered
+
+    private void helpInputs8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs8MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs8MouseEntered
+
+    private void helpInputs17MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs17MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs17MouseEntered
+
+    private void helpInputs19MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs19MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs19MouseEntered
+
+    private void helpInputs18MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs18MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs18MouseEntered
+
+    private void helpInputs21MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs21MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs21MouseEntered
+
+    private void helpInputs23MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs23MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs23MouseEntered
+
+    private void helpInputs22MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs22MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs22MouseEntered
+
+    private void helpInputs20MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs20MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs20MouseEntered
+
+    private void helpInputs16MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs16MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs16MouseEntered
+
+    private void helpInputs25MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs25MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs25MouseEntered
+
+    private void helpInputs27MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs27MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs27MouseEntered
+
+    private void helpInputs26MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs26MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs26MouseEntered
+
+    private void helpInputs29MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs29MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs29MouseEntered
+
+    private void helpInputs31MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs31MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs31MouseEntered
+
+    private void helpInputs30MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs30MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs30MouseEntered
+
+    private void helpInputs28MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs28MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs28MouseEntered
+
+    private void helpInputs24MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs24MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs24MouseEntered
+
+    private void helpInputs33MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs33MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs33MouseEntered
+
+    private void helpInputs35MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs35MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs35MouseEntered
+
+    private void helpInputs34MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs34MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs34MouseEntered
+
+    private void helpInputs37MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs37MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs37MouseEntered
+
+    private void helpInputs39MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs39MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs39MouseEntered
+
+    private void helpInputs38MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs38MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs38MouseEntered
+
+    private void helpInputs36MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs36MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs36MouseEntered
+
+    private void helpInputs32MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs32MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs32MouseEntered
+
+    private void helpInputs41MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs41MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs41MouseEntered
+
+    private void helpInputs43MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs43MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs43MouseEntered
+
+    private void helpInputs42MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs42MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs42MouseEntered
+
+    private void helpInputs45MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs45MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs45MouseEntered
+
+    private void helpInputs47MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs47MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs47MouseEntered
+
+    private void helpInputs46MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs46MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs46MouseEntered
+
+    private void helpInputs44MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs44MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs44MouseEntered
+
+    private void helpInputs40MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs40MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs40MouseEntered
+
+    private void helpInputs49MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs49MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs49MouseEntered
+
+    private void helpInputs51MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs51MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs51MouseEntered
+
+    private void helpInputs50MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs50MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs50MouseEntered
+
+    private void helpInputs53MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs53MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs53MouseEntered
+
+    private void helpInputs55MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs55MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs55MouseEntered
+
+    private void helpInputs54MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs54MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs54MouseEntered
+
+    private void helpInputs52MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs52MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs52MouseEntered
+
+    private void helpInputs48MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs48MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpInputs48MouseEntered
 
     /*
      *Set values in view according to calculation     
@@ -740,10 +2635,67 @@ public class ScubaDivingView extends javax.swing.JFrame {
     private java.awt.TextField depthEnd;
     private java.awt.TextField depthStart;
     private javax.swing.JButton eadButton;
+    private javax.swing.JPanel helpInputs;
+    private javax.swing.JPanel helpInputs1;
+    private javax.swing.JPanel helpInputs10;
+    private javax.swing.JPanel helpInputs11;
+    private javax.swing.JPanel helpInputs12;
+    private javax.swing.JPanel helpInputs13;
+    private javax.swing.JPanel helpInputs14;
+    private javax.swing.JPanel helpInputs15;
+    private javax.swing.JPanel helpInputs16;
+    private javax.swing.JPanel helpInputs17;
+    private javax.swing.JPanel helpInputs18;
+    private javax.swing.JPanel helpInputs19;
+    private javax.swing.JPanel helpInputs2;
+    private javax.swing.JPanel helpInputs20;
+    private javax.swing.JPanel helpInputs21;
+    private javax.swing.JPanel helpInputs22;
+    private javax.swing.JPanel helpInputs23;
+    private javax.swing.JPanel helpInputs24;
+    private javax.swing.JPanel helpInputs25;
+    private javax.swing.JPanel helpInputs26;
+    private javax.swing.JPanel helpInputs27;
+    private javax.swing.JPanel helpInputs28;
+    private javax.swing.JPanel helpInputs29;
+    private javax.swing.JPanel helpInputs3;
+    private javax.swing.JPanel helpInputs30;
+    private javax.swing.JPanel helpInputs31;
+    private javax.swing.JPanel helpInputs32;
+    private javax.swing.JPanel helpInputs33;
+    private javax.swing.JPanel helpInputs34;
+    private javax.swing.JPanel helpInputs35;
+    private javax.swing.JPanel helpInputs36;
+    private javax.swing.JPanel helpInputs37;
+    private javax.swing.JPanel helpInputs38;
+    private javax.swing.JPanel helpInputs39;
+    private javax.swing.JPanel helpInputs4;
+    private javax.swing.JPanel helpInputs40;
+    private javax.swing.JPanel helpInputs41;
+    private javax.swing.JPanel helpInputs42;
+    private javax.swing.JPanel helpInputs43;
+    private javax.swing.JPanel helpInputs44;
+    private javax.swing.JPanel helpInputs45;
+    private javax.swing.JPanel helpInputs46;
+    private javax.swing.JPanel helpInputs47;
+    private javax.swing.JPanel helpInputs48;
+    private javax.swing.JPanel helpInputs49;
+    private javax.swing.JPanel helpInputs5;
+    private javax.swing.JPanel helpInputs50;
+    private javax.swing.JPanel helpInputs51;
+    private javax.swing.JPanel helpInputs52;
+    private javax.swing.JPanel helpInputs53;
+    private javax.swing.JPanel helpInputs54;
+    private javax.swing.JPanel helpInputs55;
+    private javax.swing.JPanel helpInputs6;
+    private javax.swing.JPanel helpInputs7;
+    private javax.swing.JPanel helpInputs8;
+    private javax.swing.JPanel helpInputs9;
     private javax.swing.JPanel inputsComplexCalculations;
     private javax.swing.JPanel inputsComplexCalculations1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
