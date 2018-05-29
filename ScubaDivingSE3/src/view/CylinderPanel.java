@@ -12,19 +12,30 @@ import model.Cylinder;
 /**
  *
  * @author pablo
- * 
+ *
  * Panel on which the cylinder is drawn.
  */
 public class CylinderPanel extends JPanel {
+
     Cylinder cylinder;
 
+    /**
+     * Get cylinder attribute
+     *
+     * @return cylinder attribute.
+     */
     public Cylinder getCylinder() {
         return cylinder;
     }
 
+    /**
+     * Sets cylinder attribute.
+     *
+     * @param cylinder
+     */
     public void setCylinder(Cylinder cylinder) {
         this.cylinder = cylinder;
-    }   
+    }
 
     @Override
     protected void paintComponent(Graphics g) {
@@ -33,4 +44,3 @@ public class CylinderPanel extends JPanel {
     }
 
 }
-

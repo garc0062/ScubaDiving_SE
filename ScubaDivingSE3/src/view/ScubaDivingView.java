@@ -10,9 +10,6 @@ import chrriis.dj.nativeswing.swtimpl.components.JWebBrowser;
 import control.Controller;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import javax.swing.JDialog;
 import javax.swing.JEditorPane;
 import javax.swing.JOptionPane;
@@ -29,9 +26,6 @@ import model.SimpleCalculation;
 public class ScubaDivingView extends javax.swing.JFrame {
 
     Controller controller;
-    //JFrame frameHelp;
-    JPanel panelHelp;
-    JEditorPane help;
     private final JWebBrowser fileBrowser = new JWebBrowser(JWebBrowser.destroyOnFinalization());
 
     /**
@@ -2343,51 +2337,19 @@ public class ScubaDivingView extends javax.swing.JFrame {
                 + "to make simple calculations", "Help", 1);
 
     }//GEN-LAST:event_helpInputsMouseEntered
-
+    /**
+     * Loads the Final-user-manual.
+     */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        //frameHelp = new JFrame();
         NativeInterface.open();
         final JDialog frame = new JDialog(this, "HELP", true);
-
-        panelHelp = new JPanel();
-        //frameHelp.add(panelHelp);
-
         fileBrowser.setBarsVisible(false);
         fileBrowser.setStatusBarVisible(false);
-        //fileRenderPanel.add(fileBrowser, BorderLayout.CENTER);
         frame.getContentPane().add(fileBrowser, BorderLayout.CENTER);
-
-        //System.out.println("file://" + this.getClass().getResource("/img/manual.html").getFile());
-        System.out.println(fileBrowser.navigate("file://" + this.getClass().getResource("/img/Final-user-manual.pdf").getFile()));
-
-        help = new JEditorPane();
-        help.setContentType("text/html");
-        String data = "<IMG SRC='file://../img/help_icon.png' width='24' height='24'>";
-        StringBuilder contentBuilder = new StringBuilder();
-        try (BufferedReader in = new BufferedReader(new FileReader("src/img/manual.html"))) {
-            String str;
-            while ((str = in.readLine()) != null) {
-                contentBuilder.append(str);
-            }
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-        //frameHelp.setPreferredSize(new Dimension(600, 600));
-        JScrollPane jsp = new JScrollPane(help);
-        //panelHelp.setPreferredSize(new Dimension(380, 280));
-        //frameHelp.getContentPane().add(jsp);
-        //panelHelp.add(jsp);
-        help.getDocument().putProperty("IgnoreCharsetDirective", Boolean.TRUE);
-        //help.setText(contentBuilder.toString());
-        help.setText(data);
-        //jEditorPane1.setText(data);
+        fileBrowser.navigate("file://" + this.getClass().getResource("/img/Final-user-manual.pdf").getFile());
         frame.setPreferredSize(new Dimension(1000, 600));
-        //frame.getContentPane().add(jsp);
         frame.pack();
         frame.setVisible(true);
-        ///this.add(fileRenderPanel);
-        //frameHelp.pack();
-        //frameHelp.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void helpInputs1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs1MouseEntered

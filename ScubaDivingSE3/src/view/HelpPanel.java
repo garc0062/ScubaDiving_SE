@@ -7,7 +7,6 @@ package view;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
@@ -15,11 +14,18 @@ import javax.swing.JPanel;
 /**
  *
  * @author pablo
+ *
+ * Class to create a panel with a help icon. Rxtrnds JPanel.
+ *
+ * Icon reproduced from https://www.iconfinder.com/search/?q=help
  */
 public class HelpPanel extends JPanel {
 
     private BufferedImage image;
 
+    /**
+     * Constructor of the HelpPanel
+     */
     public HelpPanel() {
         super();
         try {
@@ -29,9 +35,15 @@ public class HelpPanel extends JPanel {
         }
     }
 
+    /**
+     * Load an image in the Panel Object, the image takes the whole size of the
+     * panel.
+     *
+     * @param g graph component.
+     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(image, 0, 0, getWidth(), getHeight(), this); // see javadoc for more info on the parameters            
+        g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
     }
 }
