@@ -29,7 +29,7 @@ public class HelpPanel extends JPanel {
     public HelpPanel() {
         super();
         try {
-            image = ImageIO.read(this.getClass().getResource("/img/help_icon.png"));
+            image = ImageIO.read(this.getClass().getResource("/docs/help_icon.png"));
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }

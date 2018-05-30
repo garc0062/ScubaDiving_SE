@@ -5,7 +5,10 @@
         <group>
             <file>file:/C:/Users/pablo/Documents/NetBeansProjects/Scuba-Diving/ScubaDivingSE3/src/view/CylinderPanel.java</file>
             <file>file:/C:/Users/pablo/Documents/NetBeansProjects/Scuba-Diving/ScubaDivingSE3/src/view/ScubaDivingView.java</file>
+            <file>file:/C:/Users/pablo/Documents/NetBeansProjects/Scuba-Diving/ScubaDivingSE3/src/model/SimpleCalculation.java</file>
             <file>file:/C:/Users/pablo/Documents/NetBeansProjects/Scuba-Diving/ScubaDivingSE3/src/model/Cylinder.java</file>
+            <file>file:/C:/Users/pablo/Documents/NetBeansProjects/Scuba-Diving/ScubaDivingSE3/src/view/DefaultTableHeaderCellRenderer.java</file>
+            <file>file:/C:/Users/pablo/Documents/NetBeansProjects/Scuba-Diving/ScubaDivingSE3/test/model/CylinderTest.java</file>
             <file>file:/C:/Users/pablo/Documents/NetBeansProjects/Scuba-Diving/ScubaDivingSE3/src/view/HelpPanel.java</file>
         </group>
     </open-files>

@@ -5,15 +5,15 @@
  */
 package view;
 
-import chrriis.dj.nativeswing.swtimpl.NativeInterface;
-import chrriis.dj.nativeswing.swtimpl.components.JWebBrowser;
 import control.Controller;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import javax.swing.JDialog;
-import javax.swing.JEditorPane;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import model.Cylinder;
@@ -26,7 +26,6 @@ import model.SimpleCalculation;
 public class ScubaDivingView extends javax.swing.JFrame {
 
     Controller controller;
-    private final JWebBrowser fileBrowser = new JWebBrowser(JWebBrowser.destroyOnFinalization());
 
     /**
      * Creates new form ScubaDivingView
@@ -1550,7 +1549,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
 
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Inputs"));
 
-        inputsComplexCalculations.setBorder(javax.swing.BorderFactory.createTitledBorder("Oxigen"));
+        inputsComplexCalculations.setBorder(javax.swing.BorderFactory.createTitledBorder("Oxygen"));
 
         label5.setText("Start:");
 
@@ -2341,15 +2340,18 @@ public class ScubaDivingView extends javax.swing.JFrame {
      * Loads the Final-user-manual.
      */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        NativeInterface.open();
-        final JDialog frame = new JDialog(this, "HELP", true);
-        fileBrowser.setBarsVisible(false);
-        fileBrowser.setStatusBarVisible(false);
-        frame.getContentPane().add(fileBrowser, BorderLayout.CENTER);
-        fileBrowser.navigate("file://" + this.getClass().getResource("/img/Final-user-manual.pdf").getFile());
-        frame.setPreferredSize(new Dimension(1000, 600));
-        frame.pack();
-        frame.setVisible(true);
+        if (Desktop.isDesktopSupported()) {
+            try {                
+                Path tempOutput = Files.createTempFile("TempManual", ".pdf");
+                tempOutput.toFile().deleteOnExit();
+                try (InputStream is = getClass().getResourceAsStream("/docs/Final-user-manual.pdf")) {
+                    Files.copy(is, tempOutput, StandardCopyOption.REPLACE_EXISTING);
+                }
+                Desktop.getDesktop().open(tempOutput.toFile());
+            } catch (Exception ex) {
+                System.out.println("Pdf file could not be opened " + ex.getMessage());
+            }
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void helpInputs1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs1MouseEntered

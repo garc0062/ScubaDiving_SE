@@ -5,7 +5,6 @@
  */
 package model;
 
-import java.awt.Graphics;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -29,15 +28,57 @@ public class CylinderTest {
     }
 
     /**
-     * Test of draw method, of class Cylinder.
+     * Test of all points of the oxygen-nitrogen cylinder so that
+     * oxygen-nitrogen cylinder is properly drawn.
      */
     @Test
     public void testPointsToDrawCylinder() {
-        System.out.println("draw");
-        Graphics g = null;
-        Cylinder instance = null;
-        instance.draw(g);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("draw points");
+
+        //cylinder for minimum oxygen
+        Cylinder cylinder = new Cylinder(SimpleCalculation.MIN_OXYGEN_VALUE);
+        assertEquals(200, cylinder.getXUpperLeftOxygen(), 0);
+        assertEquals(70, cylinder.getYUpperLeftOxygen(), 0);
+        assertEquals(160, cylinder.getXOxygenCurve(), 0);
+        assertEquals(170, cylinder.getYOxygenCurve(), 0);
+        assertEquals(200, cylinder.getXLowerLeftOxygen(), 0);
+        assertEquals(270, cylinder.getYLowerLeftOxygen(), 0);
+        assertEquals(288, cylinder.getXLowerRightOxygen(), 0);
+        assertEquals(270, cylinder.getYLowerRightOxygen(), 0);
+        assertEquals(288, cylinder.getXUpperRightOxygen(), 0);
+        assertEquals(70, cylinder.getYUpperRightOxygen(), 0);
+        assertEquals(288, cylinder.getXUpperLeftNitrogen(), 0);
+        assertEquals(70, cylinder.getYUpperLeftNitrogen(), 0);
+        assertEquals(640, cylinder.getXNitrogenCurve(), 0);
+        assertEquals(170, cylinder.getYNitrogenCurve(), 0);
+        assertEquals(288, cylinder.getXLowerLeftNitrogen(), 0);
+        assertEquals(270, cylinder.getYLowerLeftNitrogen(), 0);
+        assertEquals(600, cylinder.getXLowerRightNitrogen(), 0);
+        assertEquals(270, cylinder.getYLowerRightNitrogen(), 0);
+        assertEquals(600, cylinder.getXUpperRightNitrogen(), 0);
+        assertEquals(70, cylinder.getYUpperRightNitrogen(), 0);
+
+        //cylinder for maximum oxygen
+        cylinder = new Cylinder(SimpleCalculation.MAX_OXYGEN_VALUE);
+        assertEquals(200, cylinder.getXUpperLeftOxygen(), 0);
+        assertEquals(70, cylinder.getYUpperLeftOxygen(), 0);
+        assertEquals(160, cylinder.getXOxygenCurve(), 0);
+        assertEquals(170, cylinder.getYOxygenCurve(), 0);
+        assertEquals(200, cylinder.getXLowerLeftOxygen(), 0);
+        assertEquals(270, cylinder.getYLowerLeftOxygen(), 0);
+        assertEquals(400, cylinder.getXLowerRightOxygen(), 0);
+        assertEquals(270, cylinder.getYLowerRightOxygen(), 0);
+        assertEquals(400, cylinder.getXUpperRightOxygen(), 0);
+        assertEquals(70, cylinder.getYUpperRightOxygen(), 0);
+        assertEquals(400, cylinder.getXUpperLeftNitrogen(), 0);
+        assertEquals(70, cylinder.getYUpperLeftNitrogen(), 0);
+        assertEquals(640, cylinder.getXNitrogenCurve(), 0);
+        assertEquals(170, cylinder.getYNitrogenCurve(), 0);
+        assertEquals(400, cylinder.getXLowerLeftNitrogen(), 0);
+        assertEquals(270, cylinder.getYLowerLeftNitrogen(), 0);
+        assertEquals(600, cylinder.getXLowerRightNitrogen(), 0);
+        assertEquals(270, cylinder.getYLowerRightNitrogen(), 0);
+        assertEquals(600, cylinder.getXUpperRightNitrogen(), 0);
+        assertEquals(70, cylinder.getYUpperRightNitrogen(), 0);
     }
 }

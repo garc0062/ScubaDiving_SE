@@ -8,6 +8,7 @@ package model;
 import java.text.DecimalFormat;
 
 /**
+ * Class to manage all complex calculations.
  *
  * @author pablo
  */
@@ -233,7 +234,7 @@ public class ComplexCalculation {
      *
      * @return number of columns
      */
-    public int getSizeRows() {        
+    public int getSizeRows() {
         return (depthEnd - depthStart) / INCREASE_DEPTH + 1;
     }
 }

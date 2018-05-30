@@ -60,7 +60,7 @@ public class Cylinder {
     }
 
     /**
-     * Draw cylinder in container.
+     * Draw cylinder in a parent container.
      *
      * @param g Graphics
      */
@@ -93,82 +93,162 @@ public class Cylinder {
         g2d.drawString("Nitrogen " + widthNitrogen + "%", x + 72 * SCALE, y - 20);
     }
 
+    /**
+     *
+     * @return x point of upper left oxygen figure
+     */
     public double getXUpperLeftOxygen() {
         return x;
     }
 
+    /**
+     *
+     * @return y point of upper left oxygen figure
+     */
     public double getYUpperLeftOxygen() {
         return y;
     }
 
+    /**
+     *
+     * @return x point of left curve of oxygen figure
+     */
     public double getXOxygenCurve() {
         return x - curveLevel * SCALE;
     }
 
+    /**
+     *
+     * @return y point of left curve of oxygen figure
+     */
     public double getYOxygenCurve() {
         return y + (height / 2) * SCALE;
     }
 
+    /**
+     *
+     * @return x point of lower left oxygen figure
+     */
     public double getXLowerLeftOxygen() {
         return x;
     }
 
+    /**
+     *
+     * @return y point of lower left oxygen figure
+     */
     public double getYLowerLeftOxygen() {
         return y + height * SCALE;
     }
 
+    /**
+     *
+     * @return x point of lower right oxygen figure
+     */
     public double getXLowerRightOxygen() {
         return x + widthOxygen * SCALE;
     }
 
+    /**
+     *
+     * @return y point of lower right oxygen figure
+     */
     public double getYLowerRightOxygen() {
         return y + height * SCALE;
     }
 
+    /**
+     *
+     * @return x point of upper right oxygen figure
+     */
     public double getXUpperRightOxygen() {
         return x + widthOxygen * SCALE;
     }
 
+    /**
+     *
+     * @return y point of upper right oxygen figure
+     */
     public double getYUpperRightOxygen() {
         return y;
     }
 
+    /**
+     *
+     * @return x point of upper left nitrogen figure
+     */
     public double getXUpperLeftNitrogen() {
         return x + widthOxygen * SCALE;
     }
 
+    /**
+     *
+     * @return y point of upper left nitrogen figure
+     */
     public double getYUpperLeftNitrogen() {
         return y;
     }
 
+    /**
+     *
+     * @return x point of right curve of nitrogen figure
+     */
     public double getXNitrogenCurve() {
         return x + (MAX_WIDTH + curveLevel) * SCALE;
     }
 
+    /**
+     *
+     * @return y point of right curve of nitrogen figure
+     */
     public double getYNitrogenCurve() {
         return (height / 2) * SCALE + y;
     }
 
+    /**
+     *
+     * @return x point of lower left nitrogen figure
+     */
     public double getXLowerLeftNitrogen() {
         return x + widthOxygen * SCALE;
     }
 
+    /**
+     *
+     * @return y point of lower left nitrogen figure
+     */
     public double getYLowerLeftNitrogen() {
         return y + height * SCALE;
     }
 
+    /**
+     *
+     * @return x point of lower right nitrogen figure
+     */
     public double getXLowerRightNitrogen() {
         return x + MAX_WIDTH * SCALE;
     }
 
+    /**
+     *
+     * @return y point of lower right nitrogen figure
+     */
     public double getYLowerRightNitrogen() {
         return y + height * SCALE;
     }
 
+    /**
+     *
+     * @return x point of upper right nitrogen figure
+     */
     public double getXUpperRightNitrogen() {
         return x + MAX_WIDTH * SCALE;
     }
 
+    /**
+     *
+     * @return y point of upper right nitrogen figure
+     */
     public double getYUpperRightNitrogen() {
         return y;
     }
