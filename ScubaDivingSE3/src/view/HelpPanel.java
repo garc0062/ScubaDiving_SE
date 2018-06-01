@@ -28,6 +28,7 @@ public class HelpPanel extends JPanel {
      */
     public HelpPanel() {
         super();
+        setToolTipText("Click on the icon for help.");
         try {
             image = ImageIO.read(this.getClass().getResource("/docs/help_icon.png"));
         } catch (IOException ex) {
