@@ -7,8 +7,6 @@ package view;
 
 import control.Controller;
 import java.awt.Desktop;
-import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -200,6 +198,9 @@ public class ScubaDivingView extends javax.swing.JFrame {
 
         helpInputs16.setPreferredSize(new java.awt.Dimension(12, 12));
         helpInputs16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                helpInputs16MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 helpInputs16MouseEntered(evt);
             }
@@ -502,6 +503,9 @@ public class ScubaDivingView extends javax.swing.JFrame {
 
         helpInputs.setPreferredSize(new java.awt.Dimension(12, 12));
         helpInputs.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                helpInputsMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 helpInputsMouseEntered(evt);
             }
@@ -785,6 +789,9 @@ public class ScubaDivingView extends javax.swing.JFrame {
 
         helpInputs8.setPreferredSize(new java.awt.Dimension(12, 12));
         helpInputs8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                helpInputs8MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 helpInputs8MouseEntered(evt);
             }
@@ -1022,6 +1029,9 @@ public class ScubaDivingView extends javax.swing.JFrame {
 
         helpInputs24.setPreferredSize(new java.awt.Dimension(12, 12));
         helpInputs24.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                helpInputs24MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 helpInputs24MouseEntered(evt);
             }
@@ -1298,6 +1308,9 @@ public class ScubaDivingView extends javax.swing.JFrame {
 
         helpInputs32.setPreferredSize(new java.awt.Dimension(12, 12));
         helpInputs32.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                helpInputs32MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 helpInputs32MouseEntered(evt);
             }
@@ -1742,6 +1755,9 @@ public class ScubaDivingView extends javax.swing.JFrame {
 
         helpInputs40.setPreferredSize(new java.awt.Dimension(12, 12));
         helpInputs40.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                helpInputs40MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 helpInputs40MouseEntered(evt);
             }
@@ -1979,6 +1995,9 @@ public class ScubaDivingView extends javax.swing.JFrame {
 
         helpInputs48.setPreferredSize(new java.awt.Dimension(12, 12));
         helpInputs48.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                helpInputs48MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 helpInputs48MouseEntered(evt);
             }
@@ -2332,8 +2351,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void helpInputsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputsMouseEntered
-        JOptionPane.showMessageDialog(this, "Different inputs of the \"Circled T\" "
-                + "to make simple calculations", "Help", 1);
+
 
     }//GEN-LAST:event_helpInputsMouseEntered
     /**
@@ -2341,7 +2359,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
      */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         if (Desktop.isDesktopSupported()) {
-            try {                
+            try {
                 Path tempOutput = Files.createTempFile("TempManual", ".pdf");
                 tempOutput.toFile().deleteOnExit();
                 try (InputStream is = getClass().getResourceAsStream("/docs/Final-user-manual.pdf")) {
@@ -2411,10 +2429,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
     }//GEN-LAST:event_helpInputs12MouseEntered
 
     private void helpInputs8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs8MouseEntered
-        JOptionPane.showMessageDialog(this, "Displays the result of a simple calculation"
-                + " (by pushing an option in the \"Simple Calculation\" \n"
-                + "section), given the respective input values in the \"Inputs\" section. \n"
-                + "Note: dangerous values are not displayed.", "Help", 1);
+
     }//GEN-LAST:event_helpInputs8MouseEntered
 
     private void helpInputs17MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs17MouseEntered
@@ -2446,13 +2461,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
     }//GEN-LAST:event_helpInputs20MouseEntered
 
     private void helpInputs16MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs16MouseEntered
-        JOptionPane.showMessageDialog(this, "Each option makes a simple calculation "
-                + "from the values in the “Inputs” section and put the output in the "
-                + "“Result” section. \n"
-                + "EAD: Equivalent Air Depth. \n"
-                + "MOD: Maximum Operating Depth. \n"
-                + "Best Mix: Fraction of Oxygen. \n"
-                + "PPO2: Partial Pressure of oxygen.", "Help", 1);
+
     }//GEN-LAST:event_helpInputs16MouseEntered
 
     private void helpInputs25MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs25MouseEntered
@@ -2484,9 +2493,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
     }//GEN-LAST:event_helpInputs28MouseEntered
 
     private void helpInputs24MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs24MouseEntered
-        JOptionPane.showMessageDialog(this, "An Oxygen-Nitrogen cylinder "
-                + "showing dynamicly the mixture \n"
-                + "of oxygen and nitrogen in the cylinder.", "Help", 1);
+
     }//GEN-LAST:event_helpInputs24MouseEntered
 
     private void helpInputs33MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs33MouseEntered
@@ -2518,12 +2525,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
     }//GEN-LAST:event_helpInputs36MouseEntered
 
     private void helpInputs32MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs32MouseEntered
-        JOptionPane.showMessageDialog(this, "Each option creates a dynamic table "
-                + "(shown in the \"Results\" section) \n"
-                + "displaying the respective calculation for each pair of values \n"
-                + "between the range of values in the \"Inputs\" section. \n"
-                + "EAD: Equivalent Air Depth. \n"
-                + "PPO2: Partial Pressure of oxygen.", "Help", 1);
+
     }//GEN-LAST:event_helpInputs32MouseEntered
 
     private void helpInputs41MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs41MouseEntered
@@ -2555,10 +2557,7 @@ public class ScubaDivingView extends javax.swing.JFrame {
     }//GEN-LAST:event_helpInputs44MouseEntered
 
     private void helpInputs40MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs40MouseEntered
-        JOptionPane.showMessageDialog(this,
-                "Range of input values for oxygen and depth \n"
-                + "upon which the dynamic table is created and displayed \n"
-                + "in the \"Results\" section.", "Help", 1);
+
     }//GEN-LAST:event_helpInputs40MouseEntered
 
     private void helpInputs49MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs49MouseEntered
@@ -2590,13 +2589,61 @@ public class ScubaDivingView extends javax.swing.JFrame {
     }//GEN-LAST:event_helpInputs52MouseEntered
 
     private void helpInputs48MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs48MouseEntered
+
+    }//GEN-LAST:event_helpInputs48MouseEntered
+
+    private void helpInputs32MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs32MouseClicked
+        JOptionPane.showMessageDialog(this, "Each option creates a dynamic table "
+                + "(shown in the \"Results\" section) \n"
+                + "displaying the respective calculation for each pair of values \n"
+                + "between the range of values in the \"Inputs\" section. \n"
+                + "EAD: Equivalent Air Depth. \n"
+                + "PPO2: Partial Pressure of oxygen.", "Help", 1);
+    }//GEN-LAST:event_helpInputs32MouseClicked
+
+    private void helpInputs48MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs48MouseClicked
         JOptionPane.showMessageDialog(this,
                 "Dynamic table showing values of the complex calculation defined in the \n"
                 + "\"Complex Calculations\" section, for  the range of input values defined \n"
                 + "in the \"Inputs\" section. \n"
                 + "Depth (y axis) increaments by 3 meters. \n"
                 + "Oxygen (x axis) increments by 1%", "Help", 1);
-    }//GEN-LAST:event_helpInputs48MouseEntered
+    }//GEN-LAST:event_helpInputs48MouseClicked
+
+    private void helpInputs40MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs40MouseClicked
+        JOptionPane.showMessageDialog(this,
+                "Range of input values for oxygen and depth \n"
+                + "upon which the dynamic table is created and displayed \n"
+                + "in the \"Results\" section.", "Help", 1);
+    }//GEN-LAST:event_helpInputs40MouseClicked
+
+    private void helpInputs16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs16MouseClicked
+        JOptionPane.showMessageDialog(this, "Each option makes a simple calculation "
+                + "from the values in the “Inputs” section and put the output in the "
+                + "“Result” section. \n"
+                + "EAD: Equivalent Air Depth. \n"
+                + "MOD: Maximum Operating Depth. \n"
+                + "Best Mix: Fraction of Oxygen. \n"
+                + "PPO2: Partial Pressure of oxygen.", "Help", 1);
+    }//GEN-LAST:event_helpInputs16MouseClicked
+
+    private void helpInputsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputsMouseClicked
+        JOptionPane.showMessageDialog(this, "Different inputs of the \"Circled T\" "
+                + "to make simple calculations", "Help", 1);
+    }//GEN-LAST:event_helpInputsMouseClicked
+
+    private void helpInputs8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs8MouseClicked
+        JOptionPane.showMessageDialog(this, "Displays the result of a simple calculation"
+                + " (by pushing an option in the \"Simple Calculation\" \n"
+                + "section), given the respective input values in the \"Inputs\" section. \n"
+                + "Note: dangerous values are not displayed.", "Help", 1);
+    }//GEN-LAST:event_helpInputs8MouseClicked
+
+    private void helpInputs24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpInputs24MouseClicked
+        JOptionPane.showMessageDialog(this, "An Oxygen-Nitrogen cylinder "
+                + "showing dynamicly the mixture \n"
+                + "of oxygen and nitrogen in the cylinder.", "Help", 1);
+    }//GEN-LAST:event_helpInputs24MouseClicked
 
     /*
      *Set values in view according to calculation     

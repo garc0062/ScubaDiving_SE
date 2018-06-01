@@ -73,7 +73,7 @@ public class Cylinder {
         oxygen.lineTo(getXLowerRightOxygen(), getYLowerRightOxygen());
         oxygen.lineTo(getXUpperRightOxygen(), getYUpperRightOxygen());
         oxygen.closePath();
-        g2d.setColor(new Color(0, 0, 180));
+        g2d.setColor(new Color(0, 220, 0));
         g2d.fill(oxygen);
         g2d.setColor(Color.BLACK);
         g2d.setFont(new Font("Calibri", Font.PLAIN, 20));
@@ -86,7 +86,7 @@ public class Cylinder {
         nitrogen.curveTo(getXUpperRightNitrogen(), getYUpperRightNitrogen(), getXNitrogenCurve(), getYNitrogenCurve(), getXLowerRightNitrogen(), getYLowerRightNitrogen());
         nitrogen.lineTo(getXLowerLeftNitrogen(), getYLowerLeftNitrogen());
         nitrogen.closePath();
-        g2d.setColor(new Color(180, 0, 0));
+        g2d.setColor(new Color(220, 220, 0));
         g2d.fill(nitrogen);
         g2d.setColor(Color.BLACK);
         g2d.setFont(new Font("Calibri", Font.PLAIN, 20));
